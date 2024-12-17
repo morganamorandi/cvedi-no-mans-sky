@@ -31,7 +31,7 @@
   */
   
   --fontFamily-orbitron: 'Orbitron', sans-serif;
-  --fontFamily-azeret: 'Azeret Mono', monospace;
+  --fontFamily-chakra: 'Chakra Petch', sans-serif;
 
   /* font size */
   --fontSize-1: 3.6rem;
@@ -68,7 +68,6 @@
 /*-----------------------------------*\
   #CSS RESET
 \*-----------------------------------*/
-
 a {
   color: inherit;
   text-decoration: none;
@@ -82,7 +81,7 @@ html {
   body {
     background-color: var(--bg-dark-petrol);
     color: var(--misc-off-white);
-    font-family: var(--fontFamily-azeret);
+    font-family: var(--fontFamily-chakra);
     font-weight: var(--weight-regular);
     line-height: 1.6;
     overflow-x: hidden;
@@ -135,20 +134,24 @@ html {
   text-align: center;
 }
 
-
 #content section {
-  display: none;
+  visibility: hidden;
+}
+
+#content section:first-child {
+  visibility: visible;
 }
 
 #content section:target {
-  display: block;
+  visibility: visible;
 }
+
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
 
 /*-----------------------------------*\
-  #MAIN MENU
+  #HOME
 \*-----------------------------------*/
 
 /*-----------------------------------*\
@@ -156,7 +159,7 @@ html {
 \*-----------------------------------*/
 .navbar {
   height: 100%;
-  width: 160px; 
+  width: 450px; 
   position: fixed; 
   z-index: 1; 
   top: 0; 
