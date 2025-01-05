@@ -2,11 +2,16 @@
 
 
 $(document).ready(function(){
-    $("#language").hide();
-    $("#home").hide();
-    
-    $("button").click(function(){
-      $("#sb").hide();
-      $("#language").show();
-    });
+  $("#language").hide();
+  $("#home").hide();
+  
+  $(".standby").click(function(){
+    $("#sb").hide();
+    $("#language").show();
   });
+
+  $(".sb-prompt").click(function(){
+    $("#language").hide();
+    $("#home").show();
+  });
+});
