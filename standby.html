@@ -21,24 +21,52 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!--
+    - jquery
+  -->
+  <script src=".assets/js/script.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#language").hide();
+      $("#home").hide();
+      
+      $(".standby").click(function(){
+        $("#sb").hide();
+        $("#language").show();
+      });
+
+      $(".sb-prompt").click(function(){
+        $("#language").hide();
+        $("#home").show();
+      });
+    });
+  </script>
+
 </head>
 
 <body>  
-  <div class="container" id="content">
-    <section class="standby">
+  <div class="container">
+    <section class="standby" id="sb">
       <h1 class="h1">Welcome to <br> Nexus Multiversal Crossroads</h1>
       <img>
-      <a href="#language" class="sb-section-title">press to start</a>
+      <div class="sb-section-title">press anywhere to start</div>
     </section>
 
     <section class="language-selection" id="language">
       <p class="sb-section-title">please choose your dimension</p>
-      <a href="#home" class="sb-section-title">click to home</a>
+      <div class="sb-section-title sb-prompt">click to home</div>
     </section>
 
     <section class="home" id="home">
       <ul class="main-directory">
-        <li></li>
+        <a href=main.html#tickets class="d-item">Tickets</a>
+        <a href=main.html#checkin class="d-item">checkinfo</a>
+        <a href=main.html#timetable class="d-item">timetable</a>
+        <a href=main.html#faqs class="d-item">faqs</a>
+        <a href=main.html#map class="d-item">map</a>
       </ul>
     </section>
 
