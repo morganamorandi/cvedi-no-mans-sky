@@ -92,7 +92,7 @@ html {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-.container { padding-inline: 12px; }
+.container, .sb-container { padding-inline: 12px; }
 
 .has-before,
 .has-after {
