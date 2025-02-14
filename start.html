@@ -34,13 +34,18 @@
     $(document).ready(function(){
       $("#language").hide();
       $("#home").hide();
+      $(".sb-prompt").hide();
       
       $(".standby").click(function(){
         $("#sb").hide();
         $("#language").show();
       });
 
-      $(".sb-prompt").click(function(){
+      $(".dimension").click(function(){
+        $(".sb-prompt").show();
+      });
+
+      $(".sb-button").click(function(){
         $("#language").hide();
         $("#home").show();
       });
@@ -59,7 +64,27 @@
 
     <section class="language-selection" id="language">
       <p class="sb-section-title">please choose your dimension</p>
-      <div class="sb-section-title sb-prompt">click to home</div>
+        
+      <div class="center">
+          <div class="orbit1">
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit2">
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit3">
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit4">
+            <div class="dimension"></div>
+          </div>
+        </div>
+        	
+      <div class="sb-prompt">
+        <p>DIMENSION</p>
+        <p>Neo Babylon</p>
+        <div class="sb-button">select</div>
+      </div>
     </section>
 
     <section class="home" id="home">
@@ -75,6 +100,16 @@
   </div>
 </body>
 <footer class="footer">
-  <div class="news">footer news etc etc</div>
+  <div class="news">
+    <div class="scrolling-text">
+      <div class="scrolling-text-item">Your First Announcement</div>
+      <div class="scrolling-text-item">Your Second Announcement</div>
+      <div class="scrolling-text-item">Your First Announcement</div>
+      <div class="scrolling-text-item">Your Second Announcement</div>
+      <div class="scrolling-text-item">Your First Announcement</div>
+      <div class="scrolling-text-item">Your Second Announcement</div>
+      <!-- Add More Items Here -->
+  </div>
+</div>
 </footer>
 </html
