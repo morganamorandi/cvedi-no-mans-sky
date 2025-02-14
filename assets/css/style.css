@@ -128,6 +128,50 @@ html {
   font-size: var(--fontSize-6);
   color: var(--misc-teal);
 }
+
+label{
+  font-family: var(--fontFamily-orbitron);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  color: var(--misc-off-white);
+}
+
+.textfield{
+  color: var(--misc-off-white);
+  background-color: var(--misc-teal-alpha-15);
+  font-family: var(--fontFamily-chakra);
+  font-size: var(--fontSize-6);
+  border: 2px solid var(--misc-teal);
+  margin-top: 10px;
+  height: auto;
+  width: auto;
+  padding: 15px;
+}
+
+::placeholder {
+  color: var(--misc-off-white);
+}
+
+.counter{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.button-round{
+  color: var(--misc-off-white);
+  background-color: var(--misc-teal-alpha-15);
+  font-family: var(--fontFamily-chakra);
+  font-size: var(--fontSize-6);
+  border: 2px solid var(--misc-teal);
+  aspect-ratio: 1/1;
+  width: 100px;
+  line-height: 100%;
+  text-align: center;
+  border-radius: var(--radius-circle);
+}
+
 /*-----------------------------------*\
   #STANDBY SCREEN
 \*-----------------------------------*/
@@ -328,13 +372,43 @@ html {
  display: none;
 }
 
-.main-section .active{
+.main-section.active{
   display: block;
 }
 /*-----------------------------------*\
   #TICKETS
 \*-----------------------------------*/
 
+.c1-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  height: 100%;
+}
+
+.c1-search-row{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.c1-search-item.grow{
+  flex-grow: 1;
+}
+
+.c1-search-field{
+  width: 100%;
+  text-justify: center;
+}
+
+.c1-search-item.short{
+  width: 150px;
+}
 
 /*-----------------------------------*\
   #FOOTER
