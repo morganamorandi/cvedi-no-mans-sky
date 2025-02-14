@@ -328,7 +328,7 @@ html {
  display: none;
 }
 
-.main-section .active{
+.main-section.active{
   display: block;
 }
 /*-----------------------------------*\
