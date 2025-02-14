@@ -27,44 +27,75 @@
   <nav class="navbar active">
     <ul class="navbar-list">
       <li class="navbar-item">
-        <a href="1_tickets.html" class="navbar-link">buy your tickets</a>
+        <a href="#tickets" class="navbar-link">buy your tickets</a>
       </li>
 
       <li class="navbar-item">
-        <a href="2_checkin.html" class="navbar-link">check-in</a>
+        <a href="#checkin" class="navbar-link">check-in</a>
       </li>
 
       <li class="navbar-item">
-        <a href="3_timetable.html" class="navbar-link">timetable</a>
+        <a href="#timetable" class="navbar-link">timetable</a>
       </li>
 
       <li class="navbar-item">
-        <a href="4_faqs.html" class="navbar-link">assistance & FAQs</a>
+        <a href="#faqs" class="navbar-link">assistance & FAQs</a>
       </li>
 
       <li class="navbar-item">
-        <a href="5_map.html" class="navbar-link">map</a>
+        <a href="#map" class="navbar-link">map</a>
       </li>
 
       <li class="navbar-item">
-        <a href="index.html#home" class="navbar-link">log out</a>
+        <a href="standby.html#home" class="navbar-link">log out</a>
       </li>
     </ul>
   </nav>
-
   <main> 
     <div class="container">
-      <section class="main-section" id="tickets">
-        <div class="c1-pg-1"></div>
+      <section class="main-section active c1" id="tickets">
+        <div class="c1-pg-1">
+          <h1>Ride Search</h1>
+          <div class="c1-search">
+            <div class="c1-search-row">
+              <div class="c1-search-item grow">
+                <label for="from">From</label><br>
+                <input class="textfield c1-search-field" type="text" id="from" placeholder="Departure station"><br>
+              </div>
+              <div class="c1-search-item grow">
+                <label for="to">To</label><br>
+                <input class="textfield c1-search-field" type="text" id="to" placeholder="Arrival station">
+              </div>
+            </div>
+            <div class="c1-search-row">
+              <div class="c1-search-item grow">
+                <label for="departure">Departure</label><br>
+                <input class="textfield c1-search-field" type="text" id="departure" placeholder="Departure date"><br>
+              </div>
+              <div class="c1-search-item grow">
+                <label for="arrival">Arrival</label><br>
+                <input class="textfield c1-search-field" type="text" id="arrival" placeholder="Arrival date">
+              </div>
+              <div class="c1-search-item short">
+                <label for="passengers">Passengers</label><br>
+                  <div class="counter">
+                    <button class="button-round" id="minus">−</button>
+                    <input class="textfield c1-search-field" type="text" placeholder="0" id="passengers" style="text-align: center;"/>
+                    <button class="button-round" id="plus">+</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="c1-pg-2"></div>
         <div class="c1-pg-3"></div>
       </section>
-      <section class="main-section" id="checkin">
+      <section class="c2" id="checkin">
         <div class="c2-pg-1"></div>
       </section>
-      <section class="main-section c3" id="timetable">here</section>
-      <section class="main-section c4" id="faqs">here</section>
-      <section class="main-section c5" id="map">here</section>
+      <section class="c3" id="timetable"></section>
+      <section class="c4" id="faqs"></section>
+      <section class="c5" id="map"></section>
     </div>
   </main>
 </body>
