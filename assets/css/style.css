@@ -92,7 +92,9 @@ html {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-.container, .sb-container { padding-inline: 12px; }
+.container, .sb-container {
+    padding-inline: 12px;
+}
 
 .has-before,
 .has-after {
@@ -136,6 +138,14 @@ label{
   color: var(--misc-off-white);
 }
 
+label.labelsmall{
+    font-family: var(--fontFamily-chakra);
+    font-size: var(--fontSize-6);
+    font-weight: var(--weight-regular);
+    text-transform: none;
+    color: var(--misc-off-white);
+}
+
 .textfield{
   color: var(--misc-off-white);
   background-color: var(--misc-teal-alpha-15);
@@ -170,6 +180,40 @@ label{
   line-height: 100%;
   text-align: center;
   border-radius: var(--radius-circle);
+}
+
+.radio{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.radio .radio-option[type="radio"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--misc-teal);
+    border-radius: 50%;
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.radio .radio-option[type="radio"]:checked{
+    border-color: var(--misc-teal);
+    background: var(--misc-teal-alpha-15);
+    background-image: radial-gradient(
+            circle at center,
+            var(--misc-teal) 0%,
+            var(--misc-teal) 40%,
+            transparent 40.1%
+    );
 }
 
 /*-----------------------------------*\
@@ -381,7 +425,12 @@ label{
 
 .c1-pg-1{
     height: 95dvh;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 150px; /* Add horizontal padding to the container */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 .c1-search{
@@ -389,20 +438,29 @@ label{
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
   align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Set a maximum width for better control on large screens */
+  padding: 0 20px; /* Add additional padding if needed */
+  box-sizing: border-box;
+}
+
+.c1-search > h1 {
+    align-self: flex-start;
+    width: 100%;
 }
 
 .c1-search-row{
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 50px;
-  width: 100%;
+  justify-content: center; /* Center the items in the row */
 }
 
 .c1-search-item.grow{
   flex-grow: 1;
+  max-width: 600px; /* Optional: prevent fields from growing too wide */
 }
 
 .c1-search-field{
@@ -412,6 +470,7 @@ label{
 
 .c1-search-item.short{
   width: 150px;
+  flex-shrink: 0;
 }
 
 /*-----------------------------------*\

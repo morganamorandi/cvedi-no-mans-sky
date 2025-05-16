@@ -17,9 +17,10 @@ $(document).ready(function(){
 });
 
 function addPassenger() {
-  let currentValue = parseInt(document.getElementById("passenger").value);
+  let passengerInput = document.getElementById("passengerInput");
+  let currentValue = parseInt(passengerInput.value) || 0;
   let newValue = currentValue + 1;
-  document.getElementById("passenger").value = newValue;
+  passengerInput.value = newValue;
 }
 
 
