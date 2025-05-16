@@ -63,6 +63,7 @@
   --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
   --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+  --clip-path-button: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }
 
 /*-----------------------------------*\
@@ -118,9 +119,10 @@ h1 {
   color: var(--misc-teal);
 }
 
-.h2 {
-  font-size: var(--fontSize-2);
-  line-height: 1.4;
+h2 {
+  font-family: var(--fontFamily-orbitron);
+  font-size: var(--fontSize-3);
+  font-weight: var(--weight-semiBold);
 }
 
 h3 {
@@ -169,6 +171,21 @@ label.labelsmall{
   align-items: center;
 }
 
+.button-beveled {
+    font-family: var(--fontFamily-chakra);
+    font-weight: var(--weight-semiBold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 202 60' preserveAspectRatio='none'%3E%3Cpath d='M9.617 1H201v44.073L188.453 59H1V9.828L9.617 1Z' fill='%235ECCCC' fill-opacity='0.13' stroke='%235ECCCC' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
 .button-round{
   color: var(--misc-off-white);
   background-color: var(--misc-teal-alpha-15);
@@ -183,7 +200,6 @@ label.labelsmall{
 }
 
 .radio{
-    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -441,7 +457,7 @@ label.labelsmall{
   box-sizing: border-box;
 }
 
-.c1-search > h1 {
+.c1-search > h2 {
     align-self: flex-start;
     width: 100%;
 }
@@ -467,6 +483,15 @@ label.labelsmall{
 .c1-search-item.short{
   width: 150px;
   flex-shrink: 0;
+}
+
+.c1-radio {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.c1-button-beveled{
+    margin-left: auto;
 }
 
 /*-----------------------------------*\
