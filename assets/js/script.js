@@ -16,6 +16,11 @@ $(document).ready(function(){
   });
 });
 
+function addPassenger() {
+  let currentValue = parseInt(document.getElementById("passenger").value);
+  let newValue = currentValue + 1;
+  document.getElementById("passenger").value = newValue;
+}
 
 
 
