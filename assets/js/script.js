@@ -23,6 +23,19 @@ function addPassenger() {
   passengerInput.value = newValue;
 }
 
+function setupDateButtons() {
+  document.querySelectorAll('.c1-date').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.c1-date').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupDateButtons);
+
 
 
 /* // page navigation variables

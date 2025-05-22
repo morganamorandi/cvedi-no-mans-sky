@@ -40,12 +40,13 @@
   --fontSize-4: 1.7rem;
   --fontSize-5: 1.5rem;
   --fontSize-6: 1.2rem;
-  --fontSize-7: 0.7rem;
-  --fontSize-8: 0.5rem;
+  --fontSize-7: 1rem;
+  --fontSize-8: 0.8rem;
 
   /* font weight */
   --weight-light: 200;
   --weight-regular: 400;
+  --weight-medium: 500;
   --weight-semiBold: 600;
   --weight-bold: 700;
 
@@ -133,6 +134,50 @@ h3 {
   color: var(--misc-teal);
 }
 
+.buttontitle {
+    font-family: var(--fontFamily-orbitron);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    font-size: var(--fontSize-5);
+    pointer-events: none;
+}
+
+.buttonsubtitle {
+    font-family: var(--fontFamily-orbitron);
+    font-weight: var(--weight-light);
+    text-transform: uppercase;
+    font-size: var(--fontSize-6);
+    pointer-events: none;
+}
+
+.ridetitle {
+    color: var(--misc-teal);
+    font-family: var(--fontFamily-orbitron);
+    font-weight: var(--weight-semiBold);
+    text-transform: uppercase;
+    font-size: var(--fontSize-6);
+    pointer-events: none;
+}
+
+.ridesubtitle {
+    font-family: var(--fontFamily-orbitron);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.ridetime {
+    font-weight: var(--weight-medium);
+    font-size: var(--fontSize-7);
+}
+
+.rideprice {
+    font-weight: var(--weight-semiBold);
+    font-size: var(--fontSize-3);
+    color: var(--misc-teal);
+}
+
 label{
   font-family: var(--fontFamily-orbitron);
   font-weight: var(--weight-semiBold);
@@ -160,6 +205,12 @@ label.labelsmall{
   padding: 15px;
 }
 
+.textfield:focus {
+    border: 2px solid var(--misc-off-white);
+    box-shadow: 0 0 7px white;
+    outline: none;
+}
+
 ::placeholder {
   color: var(--misc-off-white);
 }
@@ -180,6 +231,21 @@ label.labelsmall{
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 202 60' preserveAspectRatio='none'%3E%3Cpath d='M9.617 1H201v44.073L188.453 59H1V9.828L9.617 1Z' fill='%235ECCCC' fill-opacity='0.13' stroke='%235ECCCC' stroke-width='2'/%3E%3C/svg%3E");
     background-size: 100% 100%;
     color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.button-beveled.filled {
+    font-family: var(--fontFamily-chakra);
+    font-weight: var(--weight-semiBold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 202 60' preserveAspectRatio='none'%3E%3Cpath d='M9.617 1H201v44.073L188.453 59H1V9.828L9.617 1Z' fill='%235ECCCC' stroke='%235ECCCC' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    color: var(--bg-dark-petrol);
     font-size: 16px;
     cursor: pointer;
     border: none;
@@ -424,7 +490,7 @@ label.labelsmall{
   margin-left: 160px;
 }
 
-.main-section {
+.main-section:not(.active) {
  display: none;
 }
 
@@ -435,14 +501,13 @@ label.labelsmall{
   #TICKETS
 \*-----------------------------------*/
 
-.c1-pg-1{
-    height: 95dvh;
+.main-section.active.c1-pg-1{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 0 150px; /* Add horizontal padding to the container */
-    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    padding: 0 150px;
+    box-sizing: border-box;
 }
 
 .c1-search{
@@ -452,8 +517,8 @@ label.labelsmall{
   gap: 20px;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Set a maximum width for better control on large screens */
-  padding: 0 20px; /* Add additional padding if needed */
+  max-width: 1200px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -467,12 +532,12 @@ label.labelsmall{
   display: flex;
   flex-direction: row;
   gap: 50px;
-  justify-content: center; /* Center the items in the row */
+  justify-content: center;
 }
 
 .c1-search-item.grow{
   flex-grow: 1;
-  max-width: 600px; /* Optional: prevent fields from growing too wide */
+  max-width: 600px;
 }
 
 .c1-search-field{
@@ -492,6 +557,96 @@ label.labelsmall{
 
 .c1-button-beveled{
     margin-left: auto;
+}
+
+.main-section.active.c1-pg-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 150px;
+    box-sizing: border-box;
+}
+
+.c1-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.c1-results > h2 {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.c1-dates-slider {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.c1-date {
+    color: var(--misc-teal);
+    background-color: transparent;
+    border: 1px solid var(--misc-teal);
+    height: auto;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.c1-date.active {
+    background-color: var(--misc-teal); /* Blue background */
+    color: white; /* White text for contrast */
+    border-color: var(--misc-teal);
+}
+
+.c1-rides-list {
+    width: 100%;
+    display: flex;          /* Horizontal layout */
+    flex-direction: column;
+    gap: 10px;             /* Space between items */
+}
+
+.c1-ride {
+    color: var(--misc-off-white);
+    background-color: var(--misc-teal-alpha-15);
+    border: 2px solid var(--misc-teal);
+    display: flex;          /* Horizontal layout */
+    gap: 10px;             /* Space between items */
+    padding: 15px;
+    align-items: center;
+}
+
+.c1-departure,
+.c1-arrival,
+.c1-price,
+.c1-select {
+    flex: 1 1 auto;      /* Allows growth/shrink but maintains equal distribution */
+    min-width: 0;        /* Prevents overflow issues */
+    text-align: center;    /* Center content */
+}
+
+.c1-duration {
+    flex: 2 1 auto;
+    position: relative;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.c1-duration::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--misc-off-white);
 }
 
 /*-----------------------------------*\

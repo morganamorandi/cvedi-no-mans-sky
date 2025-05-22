@@ -54,57 +54,160 @@
     </ul>
   </nav>
   <main> 
-    <div class="container">
-      <section class="main-section active c1" id="tickets">
-        <div class="c1-pg-1">
-          <div class="c1-search">
-            <h2>Ride Search</h2>
-            <div class="c1-search-row">
-              <div class="c1-search-item grow">
-                <label for="from">From</label><br>
-                <input class="textfield c1-search-field" type="text" id="from" placeholder="Departure station"><br>
-              </div>
-              <div class="c1-search-item grow">
-                <label for="to">To</label><br>
-                <input class="textfield c1-search-field" type="text" id="to" placeholder="Arrival station">
+    <div class="container" id="tickets">
+      <section class="main-section c1-pg-1">
+        <div class="c1-search">
+          <h2>Ride Search</h2>
+          <div class="c1-search-row">
+            <div class="c1-search-item grow">
+              <label for="from">From</label><br>
+              <input class="textfield c1-search-field" type="text" id="from" placeholder="Departure station"><br>
+            </div>
+            <div class="c1-search-item grow">
+              <label for="to">To</label><br>
+              <input class="textfield c1-search-field" type="text" id="to" placeholder="Arrival station">
+            </div>
+          </div>
+          <div class="c1-search-row">
+            <div class="c1-search-item grow">
+              <label for="departure">Departure</label><br>
+              <input class="textfield c1-search-field" type="text" id="departure" placeholder="Departure date"><br>
+            </div>
+            <div class="c1-search-item grow">
+              <label for="arrival">Arrival</label><br>
+              <input class="textfield c1-search-field" type="text" id="arrival" placeholder="Arrival date">
+            </div>
+            <div class="c1-search-item short">
+              <label for="passengers">Passengers</label><br>
+              <div class="counter">
+                <button class="button-round" id="minus">−</button>
+                <input class="textfield c1-search-field" type="text" placeholder="0" id="passengers" style="text-align: center;"/>
+                <button class="button-round" id="plus" onclick="addPassenger">+</button>
               </div>
             </div>
-            <div class="c1-search-row">
-              <div class="c1-search-item grow">
-                <label for="departure">Departure</label><br>
-                <input class="textfield c1-search-field" type="text" id="departure" placeholder="Departure date"><br>
-              </div>
-              <div class="c1-search-item grow">
-                <label for="arrival">Arrival</label><br>
-                <input class="textfield c1-search-field" type="text" id="arrival" placeholder="Arrival date">
-              </div>
-              <div class="c1-search-item short">
-                <label for="passengers">Passengers</label><br>
-                  <div class="counter">
-                    <button class="button-round" id="minus">−</button>
-                    <input class="textfield c1-search-field" type="text" placeholder="0" id="passengers" style="text-align: center;"/>
-                    <button class="button-round" id="plus" onclick="addPassenger">+</button>
-                  </div>
+          </div>
+          <div class="c1-search-row">
+            <div class="c1-search-item grow">
+              <div class="radio c1-radio">
+                <input class="radio-option" type="radio" id="ridetype1" name="ridetype">
+                <label class="labelsmall" for="ridetype1">One way only</label>
+                <input class="radio-option" type="radio" id="ridetype2" name="ridetype" checked>
+                <label class="labelsmall" for="ridetype2">Back and forth</label>
               </div>
             </div>
-            <div class="c1-search-row">
-              <div class="c1-search-item grow">
-                <div class="radio c1-radio">
-                  <input class="radio-option" type="radio" id="ridetype1" name="ridetype">
-                  <label class="labelsmall" for="ridetype1">One way only</label>
-                  <input class="radio-option" type="radio" id="ridetype2" name="ridetype" checked>
-                  <label class="labelsmall" for="ridetype2">Back and forth</label>
-                </div>
+          </div>
+          <div class="c1-search-row">
+            <button class="button-beveled c1-button-beveled" id="submit">Search Rides</button>
+          </div>
+        </div>
+      </section>
+      <section class="main-section active c1-pg-2">
+        <div class="c1-results">
+          <h2>Search Results</h2>
+          <div class="c1-dates-slider">
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+            <button class="c1-date">
+              <span class="buttontitle">21 nov</span><br>
+              <span class="buttonsubtitle">thu</span>
+            </button>
+          </div>
+          <div class="c1-rides-list">
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled">Select</button>
               </div>
             </div>
-            <div class="c1-search-row">
-              <button class="button-beveled c1-button-beveled" id="submit">Search Rides</button>
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled">Select</button>
+              </div>
+            </div>
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled">Select</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="c1-pg-2"></div>
-        <div class="c1-pg-3"></div>
       </section>
+      <section class="main-section c1-pg-3"></section>
     </div>
   </main>
 </body>
