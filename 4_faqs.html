@@ -27,6 +27,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src=".assets/js/script.js"></script>
 
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active-accordion");
+        var panel = this.nextElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
 </head>
 
 <body>
@@ -188,19 +202,7 @@
       </section>
     </div>
   </main>
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
 
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active-accordion");
-        var panel = this.nextElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-  </script>
 </body>
 
 </html>
