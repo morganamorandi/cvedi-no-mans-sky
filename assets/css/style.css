@@ -176,7 +176,7 @@ label{
   #STANDBY SCREEN
 \*-----------------------------------*/
 .sb-container{
-  height: 870px;
+  height: 850px;
   background: radial-gradient(var(--bg-petrol), var(--bg-dark-petrol));
 }
 
@@ -188,6 +188,11 @@ label{
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
+.prompts{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .sb-prompt{
   height: 300px;
   width: 250px;
