@@ -16,6 +16,12 @@ $(document).ready(function(){
   });
 });
 
+function addPassenger() {
+  let passengerInput = document.getElementById("passengerInput");
+  let currentValue = parseInt(passengerInput.value) || 0;
+  let newValue = currentValue + 1;
+  passengerInput.value = newValue;
+}
 
 
 
