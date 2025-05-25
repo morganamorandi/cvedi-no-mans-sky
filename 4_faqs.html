@@ -25,21 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <script src=".assets/js/script.js"></script>
-
-    <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active-accordion");
-        var panel = this.nextElementSibling; if (panel.style.maxHeight) { panel.style.maxHeight = null; } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-  </script>
+  <script src="./assets/js/script.js"></script>
 
 </head>
 
@@ -77,11 +63,9 @@
       <section class="main-section active" id="faqs">
         <div class="titolo-bottone-faqs">
           <h2 class="faqs">Services and assistance</h2>
-          <button class="bottone-pagina faqs">Frequently Asked Questions</button>
+          <button class="button-page faqs button-beveled">Frequently Asked Questions</button>
         </div>
-        <button class="accordion">
-          <h3 class="accordion-h3">When and how to claim compensation for a ride delay?</h3>
-        </button>
+        <button class="accordion">When and how to claim compensation for a ride delay?</button>
         <div class="panel">
           <p>Once your journey has been completed, you may claim compensation independently within 1 year of the date on
             which the delay occurred or the expiration of the season ticket (pass or other cards) used, in the following
@@ -104,9 +88,7 @@
           </ul>
         </div>
 
-        <button class="accordion">
-          <h3 class="accordion-h3">Assistance to person with disabilities or reduced mobility</h3>
-        </button>
+        <button class="accordion">Assistance to person with disabilities or reduced mobility</button>
         <div class="panel">
           <p>The assistance service is provided by our crossroad and is addressed to:</p>
           <ul class="accordion-ul">
@@ -131,11 +113,10 @@
             <li class="accordion-li">
               people with mental handicap.
             </li>
+          </ul>
         </div>
 
-        <button class="accordion">
-          <h3 class="accordion-h3">When and how to claim compensation for a train delay</h3>
-        </button>
+        <button class="accordion">When and how to claim compensation for a train delay</button>
         <div class="panel">
           <p>
             If you lost one of your items you can go to Lost&Found Office. You can find the directions for the
@@ -167,9 +148,7 @@
           </p>
         </div>
 
-        <button class="accordion">
-          <h3>How can I contact the personnel for assistance?</h3>
-        </button>
+        <button class="accordion">How can I contact the personnel for assistance?</button>
         <div class="panel">
           <p>
             If you need to contact our personnel you can find click on the "call for assistance" button at the bottom of
@@ -184,7 +163,7 @@
             </li>
           </ul>
         </div>
-        <button class="bottone-assistenza">Call Assistance</button>
+        <button class="button-assistance button-yellow">Call Assistance</button>
 
       </section>
       <section class="main-section" id="faqs2">
@@ -202,7 +181,35 @@
       </section>
     </div>
   </main>
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active-accordion");
+        var panel = this.nextElementSibling;
+        // Chiudi tutti gli altri
+        for (let j = 0; j < acc.length; j++) {
+          if (acc[j] !== this) {
+            acc[j].classList.remove("active-accordion");
+            const otherPanel = acc[j].nextElementSibling;
+            if (otherPanel && otherPanel.style.maxHeight) {
+              otherPanel.style.maxHeight = null;
+            }
+          }
+        }
+
+        // Toggle dell'accordion cliccato
+        this.classList.toggle("active-accordion");
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
