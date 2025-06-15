@@ -820,7 +820,9 @@ label.labelsmall {
 .tabella-timetable {
   display: flex;
   justify-content: center;
-  height: 60vh;
+  height: 70vh;
+  text-transform: uppercase;
+  font-size: var(--fontSize-6)
 }
 
 table {
@@ -831,17 +833,17 @@ table {
 
 th {
   text-align: center;
-  background-color: rgba(87, 128, 128, 0.07);
+  background-color: var(--misc-light-petrol-alpha-7);
 }
 
 .timetable-odd {
   text-align: center;
-  background-color: var(--misc-light-petrol);
+  background-color: var(--misc-teal-alpha-15);
 }
 
 .timetable-even {
   text-align: center;
-  background-color: #578080;
+  background-color: hsla(180, 36%, 37%, 0.17);
 }
 
 .timetable-news {
