@@ -14,8 +14,10 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+
   <!--
     - css link
   -->
@@ -25,7 +27,7 @@
 
 </head>
 
-<body>  
+<body>
   <nav class="navbar active">
     <ul class="navbar-list">
       <li class="navbar-item">
@@ -54,13 +56,75 @@
     </ul>
   </nav>
 
-  <main> 
+  <main>
     <div class="container">
-      <section class="main-section" id="timetable">here</section>
-      <section class="main-section" id="faqs">here</section>
-      <section class="main-section" id="map">here</section>
+      <section class="main-section active" id="timetable">
+        <div class="titolo-bottone-timetable">
+          <h2 class="timetable">Departures</h2>
+          <button class="button-page timetable button-beveled">Arrivals</button>
+        </div>
+        <div class="tabella-timetable">
+          <table>
+            <tr>
+              <th>time</th>
+              <th>ride</th>
+              <th>to</th>
+              <th>platform</th>
+              <th>remarks</th>
+            </tr>
+            <tr class="timetable-odd">
+              <td>20:15</td>
+              <td>DZ96124</td>
+              <td>Geonosis</td>
+              <td>13</td>
+              <td>Delayed</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>20:45</td>
+              <td>IN29892</td>
+              <td>Mustafar</td>
+              <td>14</td>
+              <td></td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>21:30</td>
+              <td>GO88724</td>
+              <td>Tambora City</td>
+              <td>23</td>
+              <td>Open</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>21:35</td>
+              <td>DE10948</td>
+              <td>Oblimpon</td>
+              <td>5</td>
+              <td></td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>22:00</td>
+              <td>PA51229</td>
+              <td>Sehz-Clar</td>
+              <td>12</td>
+              <td>Open</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="main-section" id="timetable2">here</section>
     </div>
   </main>
 </body>
-
+<footer class="footer">
+  <div class="news timetable-news">
+    <div class="scrolling-text">
+      <div class="scrolling-text-item timetable-uppercase">delay of 30 minutes of the ride DZ96124</div>
+      <div class="scrolling-text-item">Fluctuation are stable at the moment</div>
+      <div class="scrolling-text-item">Inside temperature: 15° </div>
+      <div class="scrolling-text-item timetable-uppercase">arrival of the ride DZ98117 delayed by 1 hour due to an accident at the departure station</div>
+      <div class="scrolling-text-item"><span class="timetable-uppercase">warning: </span>From 9:00 p.m. on July 19th to 9:00 p.m. on July 20th 2025, trains may be cancelled or changed due to a international strike by Nexus staff</div>
+      <div class="scrolling-text-item timetable-uppercase">work in progress from platform 40 to platform 60</div>
+      <!-- Add More Items Here -->
+    </div>
+  </div>
+</footer>
 </html>
