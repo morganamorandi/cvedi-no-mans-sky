@@ -65,6 +65,12 @@
   --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
   --clip-path-button: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+
+  /**
+  * SVG
+  */
+  --svg-box-bg: url("data:image/svg+xml,%3Csvg width='200' height='268' viewBox='0 0 270 338' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M267.218 87.3529V109.815L264.441 132.277V199.664L267.218 222.126V244.588H270V87.3529H267.218Z' fill='%235ECCCC'/%3E%3Cpath d='M2.77941 244.588V222.126L5.55339 199.664L5.55882 132.277L2.77941 109.815V87.3529H0V244.588H2.77941Z' fill='%235ECCCC'/%3E%3Cpath d='M218.382 0H154.853V7.14706H218.382V0Z' fill='%235ECCCC'/%3E%3Cpath d='M73.972 324.905C73.972 325.477 73.8688 326.025 73.6861 326.533C73.019 328.368 71.2561 329.686 69.1993 329.686C67.1426 329.686 65.3796 328.376 64.7125 326.533C64.5299 326.025 64.4267 325.477 64.4267 324.905C64.4267 324.508 64.4743 324.119 64.5775 323.762C65.0857 321.681 66.9679 320.133 69.2073 320.133C71.4467 320.133 73.3287 321.681 73.8369 323.762C73.9402 324.119 73.9879 324.508 73.9879 324.905H73.972Z' fill='%235ECCCC'/%3E%3Cpath d='M56.5 324.581L15.8824 324.794V42.9271L42 7.14709H254.118V286.427L230 324.794' fill='%235ECCCC' fill-opacity='0.15'/%3E%3Cpath d='M56.5 324.581L15.8824 324.794V42.9271L42 7.14709H254.118V286.427L230 324.794H102.5' stroke='%235ECCCC' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M69.1994 336.134C75.4009 336.134 80.4283 331.107 80.4283 324.905C80.4283 318.704 75.4009 313.677 69.1994 313.677C62.9979 313.677 57.9706 318.704 57.9706 324.905C57.9706 331.107 62.9979 336.134 69.1994 336.134Z' stroke='%235ECCCC' stroke-width='2' stroke-miterlimit='10'/%3E%3C/svg%3E%0A");
+  --svg-tickets: url("data:image/svg+xml,%3Csvg width='60' height='35' viewBox='0 0 60 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36.8456 0.415671L38.5067 4.01467L41.4534 4.04193L43.1376 0.413574H51.3423L60 9.09646V34.3901H43.1376L41.5268 30.8414L38.4501 30.8477L36.8897 34.3104L36.7701 34.3922H8.73532L0 25.7345V0.415671H36.8456ZM35.5369 2.47943H2.13926L2.06376 2.55493V24.8033L9.64136 32.3263H35.5034L37.2211 28.7504L42.8796 28.7609L44.5218 32.3284H57.9362V9.95426L50.4509 2.48992H44.5302L42.8356 6.07842L37.2211 6.10569L35.5369 2.47733V2.47943Z' fill='%235ECCCC'/%3E%3Cpath d='M47.2734 28.595L44.4148 23.595L47.2609 18.6202L53.104 18.6118L55.9689 23.595L53.104 28.5783L47.2734 28.595ZM51.9379 20.6588L48.5947 20.6483L48.427 20.7322L46.8141 23.5971L48.4815 26.5313L51.8183 26.5418C51.9672 26.5124 52.0721 26.2586 52.156 26.1244C52.6614 25.296 53.1082 24.4277 53.5968 23.5908L51.9379 20.663V20.6588Z' fill='%235ECCCC'/%3E%3Cpath d='M30.1173 20.5498L29.6978 22.6136H7.95288L8.37234 20.5498H30.1173Z' fill='%235ECCCC'/%3E%3Cpath d='M8.37234 24.6777H30.1173L29.6978 26.7415H7.95288L8.37234 24.6777Z' fill='%235ECCCC'/%3E%3Cpath d='M19.7985 8.87158L19.3791 10.9353H7.95288L8.37234 8.87158H19.7985Z' fill='%235ECCCC'/%3E%3C/svg%3E%0A");
 }
 
 /*-----------------------------------*\
@@ -89,6 +95,10 @@ html {
     font-weight: var(--weight-regular);
     line-height: 1.6;
     overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
   }
 
 /*-----------------------------------*\
@@ -302,7 +312,7 @@ label.labelsmall{
   #STANDBY SCREEN
 \*-----------------------------------*/
 .sb-container{
-  height: 870px;
+  height: 850px;
   background: radial-gradient(var(--bg-petrol), var(--bg-dark-petrol));
 }
 
@@ -314,10 +324,18 @@ label.labelsmall{
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
+.prompts{
+  display: flex;
+  width: auto;
+  margin-left: 160px;
+  justify-content: space-between;
+  z-index: 3;
+}
+
 .sb-prompt{
-  height: 300px;
-  width: 250px;
-  background-color: var(--misc-light-petrol-gray);
+  width: 200px;
+  height: 268px;
+  background-image: var(--svg-box-bg);
   margin: 200px 150px auto auto;
   border: 30px;
   border-color: var(--misc-teal);
@@ -330,6 +348,7 @@ label.labelsmall{
   width: 150px;
   background-color: var(--misc-teal-alpha-15);
   margin: 100px auto;
+  cursor: grab;
 }
 
 .center {
@@ -450,14 +469,16 @@ label.labelsmall{
   justify-content: center;
   align-items: center;
   height: 300px;
-  gap: 20px;
+  gap: 40px;
 }
 
 .d-item{
   flex-wrap: wrap;
-  max-width: 100px;
-  border: 0.3rem solid var(--misc-teal);
+  background-image: var(--svg-box-bg);
+  width: 200px;
+  height: 268px;
 }
+
 /*-----------------------------------*\
   #NAVBAR
 \*-----------------------------------*/
@@ -647,6 +668,138 @@ label.labelsmall{
     width: 100%;
     height: 1.5px;
     background: var(--misc-off-white);
+}
+
+
+/*-----------------------------------*\
+  #CHECK IN
+\*-----------------------------------*/
+/* style.css */
+.keyboard {
+    text-align: center;
+    font-size: 14px;
+    font-family: var(--fontFamily-orbitron);
+}
+
+.keyboard__row {
+    display: inline-block;
+    height: 3em;
+    margin: 0.2em;
+}
+
+.keyboard__row--h1 {
+    height: 1.7em;
+    line-height: 1.4em;
+}
+
+.keyboard__row--h3 {
+    height: 3.3em;
+}
+
+.keyboard__row > * {
+    position: relative;
+    background: #333;
+    text-align: center;
+    color: #eee;
+    float: left;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 3.3em;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.keyboard__row--h1 > div {
+    width: 3.5em;
+}
+
+.keyboard__row > div[data-pressed],
+.keyboard__row > div:active {
+    background: #2a2a2a;
+    color: #aaa;
+    position: relative;
+    top: 0.2em;
+    box-shadow: 0 0 0 0.05em black;
+}
+
+.key--w3 {
+    width: 4.6em;
+}
+
+.key--w4 {
+    width: 6em;
+}
+
+.key--w5 {
+    width: 6.5em;
+}
+
+.key--w6 {
+    width: 8.3em;
+}
+
+.key--space {
+    width: 18em;
+}
+
+.key--double > * {
+    padding-top: 0.1em;
+}
+
+.key--letter {
+    line-height: 2.8em;
+}
+
+.key--bottom-left > * {
+    position: absolute;
+    text-align: left;
+    bottom: 0.4em;
+    left: 0.4em;
+}
+
+.key--bottom-right > * {
+    position: absolute;
+    text-align: right;
+    bottom: 0.4em;
+    right: 0.4em;
+}
+
+.key--fn > * {
+    font-size: 0.6em;
+    line-height: 1em;
+    padding-top: 1.2em;
+    padding-right: 0.2em;
+    text-align: right;
+    float: right;
+}
+
+.key--word > * {
+    font-size: 0.8em;
+}
+
+.key--arrow--tall > *,
+.key--arrow > * {
+    font-size: 0.5em;
+    line-height: 3em;
+}
+
+.key--arrow {
+    height: 1.8em;
+    margin-top: 1.7em;
+    line-height: 0.5em;
+}
+
+.key--arrow--tall > * {
+    padding-top: 0.2em;
+}
+
+.keyboard > .keyboard__row {
+    text-align: center;
 }
 
 /*-----------------------------------*\

@@ -27,13 +27,13 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" 
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
   crossorigin="anonymous"></script>
-  <script src=".assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
   <script>
     $(document).ready(function(){
       $("#language").hide();
       $("#home").hide();
-      $(".sb-prompt").hide();
+      $(".prompts").hide();
       
       $(".standby").click(function(){
         $("#sb").hide();
@@ -41,7 +41,7 @@
       });
 
       $(".center").click(function(){
-        $(".sb-prompt").show();
+        $(".prompts").show();
       });
 
       $(".sb-button").click(function(){
@@ -78,6 +78,7 @@
             <div class="dimension"></div>
           </div>
         </div>
+
       <div class="prompts">
         <div class="sb-prompt prompt1">
           <p>DIMENSION</p>
@@ -107,6 +108,7 @@
     </section>
 
     <section class="home" id="home">
+      <h2>What are you looking for?</h2>
       <ul class="main-directory">
         <li  class="d-item"><a href="1_tickets.html">Tickets</a></li>
         <li  class="d-item"><a href="2_checkin.html">checkinfo</a></li>
