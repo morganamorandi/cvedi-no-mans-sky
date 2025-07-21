@@ -154,11 +154,12 @@ h3 {
 }
 
 .buttontitle {
-  font-family: var(--fontFamily-orbitron);
-  font-weight: var(--weight-bold);
-  text-transform: uppercase;
-  font-size: var(--fontSize-5);
-  pointer-events: none;
+    font-family: var(--fontFamily-orbitron);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    font-size: var(--fontSize-5);
+    pointer-events: none;
+    white-space: nowrap;
 }
 
 .buttonsubtitle {
@@ -328,6 +329,16 @@ label.labelsmall {
       var(--misc-teal) 0%,
       var(--misc-teal) 40%,
       transparent 40.1%);
+}
+
+.title-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg-dark-petrol); /* Match your background */
+    padding-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /*-----------------------------------*\
@@ -567,15 +578,24 @@ label.labelsmall {
 \*-----------------------------------*/
 
 .main-section.active.c1-pg-1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0 150px;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 150px;
+    box-sizing: border-box;
 }
 
-.c1-search {
+.main-section.active.c1-pg-2, .main-section.active.c1-pg-3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 150px;
+    box-sizing: border-box;
+}
+
+.c1-search{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -605,7 +625,15 @@ label.labelsmall {
   max-width: 600px;
 }
 
-.c1-search-field {
+.c1-search-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+.c1-search-field{
   width: 100%;
   text-justify: center;
 }
@@ -622,15 +650,6 @@ label.labelsmall {
 
 .c1-button-beveled {
   margin-left: auto;
-}
-
-.main-section.active.c1-pg-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0 150px;
-  box-sizing: border-box;
 }
 
 .c1-results {
@@ -665,6 +684,14 @@ label.labelsmall {
   flex-grow: 1;
 }
 
+.c1-date.selected {
+    color: var(--bg-dark-petrol);
+    background-color: var(--misc-teal);
+    height: auto;
+    padding: 15px;
+    flex-grow: 1;
+}
+
 .c1-date.active {
   background-color: var(--misc-teal);
   /* Blue background */
@@ -683,27 +710,22 @@ label.labelsmall {
 }
 
 .c1-ride {
-  color: var(--misc-off-white);
-  background-color: var(--misc-teal-alpha-15);
-  border: 2px solid var(--misc-teal);
-  display: flex;
-  /* Horizontal layout */
-  gap: 10px;
-  /* Space between items */
-  padding: 15px;
-  align-items: center;
+    color: var(--misc-off-white);
+    background-color: var(--misc-teal-alpha-15);
+    border: 2px solid var(--misc-teal);
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    align-items: center;
 }
 
 .c1-departure,
 .c1-arrival,
 .c1-price,
 .c1-select {
-  flex: 1 1 auto;
-  /* Allows growth/shrink but maintains equal distribution */
-  min-width: 0;
-  /* Prevents overflow issues */
-  text-align: center;
-  /* Center content */
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
 }
 
 .c1-duration {
@@ -854,6 +876,99 @@ label.labelsmall {
 .keyboard > .keyboard__row {
     text-align: center;
 }
+
+.c1-passengers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.progress-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0; /* Remove gap between elements */
+}
+
+/* Step circles */
+.step {
+    width: 45px;
+    height: 45px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='29' stroke='hsla(180%2C 52%25%2C 58%25%2C 1)' stroke-width='2' stroke-dasharray='20%2C7' fill='none'/%3E%3C/svg%3E");
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Completed steps (inner solid dot) */
+.step.completed::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: var(--misc-teal);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Connector lines */
+.connector {
+    height: 2px;
+    background: var(--misc-teal);
+    flex-grow: 1; /* Expands to fill available space */
+    min-width: 20px; /* Minimum line length */
+    max-width: 60px; /* Maximum line length */
+    margin: 0 8px; /* Adds 8px space on both sides */
+}
+
+.passenger-list {
+    flex: 1;
+    overflow-y: auto; /* Only vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    max-width: 100%; /* Ensure doesn't exceed container */
+    padding-top: 10px;
+    margin-bottom: 200px; /* Match footer height */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.c1-passenger-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%; /* Prevent horizontal expansion */
+    border: 1px solid var(--misc-teal);
+    padding: 25px;
+    gap: 16px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.name-fields {
+    display: flex;
+    gap: 20px; /* Space between name fields */
+}
+
+.c1-passenger-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.c1-passenger-field {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px; /* Space between label and input */
+}
+
 
 /*-----------------------------------*\
   #FAQS
@@ -1034,7 +1149,27 @@ th {
   z-index: 1;
 }
 
-.news {
+.footer-gradient{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+            to top, var(--bg-dark-petrol) 0%, var(--bg-dark-petrol) 85%, transparent 100%);
+    display: flex; /* Add flexbox */
+    justify-content: flex-end; /* Align children to right */
+    align-items: center; /* Center vertically */
+    padding-right: 150px; /* Match your main section padding */
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.footer-gradient.taller{
+    height : 200px;
+}
+
+.news{
   padding: 15px;
   overflow: hidden;
 }
