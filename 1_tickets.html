@@ -21,7 +21,7 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <script src=".assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </head>
 
@@ -61,21 +61,21 @@
           <div class="c1-search-row">
             <div class="c1-search-item grow">
               <label for="from">From</label><br>
-              <input class="textfield c1-search-field" type="text" id="from" placeholder="Departure station"><br>
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="from" placeholder="Departure station"><br>
             </div>
             <div class="c1-search-item grow">
               <label for="to">To</label><br>
-              <input class="textfield c1-search-field" type="text" id="to" placeholder="Arrival station">
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="to" placeholder="Arrival station">
             </div>
           </div>
           <div class="c1-search-row">
             <div class="c1-search-item grow">
               <label for="departure">Departure</label><br>
-              <input class="textfield c1-search-field" type="text" id="departure" placeholder="Departure date"><br>
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="departure" placeholder="Departure date"><br>
             </div>
             <div class="c1-search-item grow">
               <label for="arrival">Arrival</label><br>
-              <input class="textfield c1-search-field" type="text" id="arrival" placeholder="Arrival date">
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="arrival" placeholder="Arrival date">
             </div>
             <div class="c1-search-item short">
               <label for="passengers">Passengers</label><br>
@@ -97,42 +97,16 @@
             </div>
           </div>
           <div class="c1-search-row">
-            <button class="button-beveled c1-button-beveled" id="submit">Search Rides</button>
+            <button class="button-beveled c1-button-beveled" id="submit" onclick="navigateToNextSection()">Search Rides</button>
           </div>
         </div>
       </section>
-      <section class="main-section active c1-pg-2">
+      <section class="main-section c1-pg-2">
         <div class="c1-results">
-          <h2>Search Results</h2>
-          <div class="c1-dates-slider">
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
-            <button class="c1-date">
-              <span class="buttontitle">21 nov</span><br>
-              <span class="buttonsubtitle">thu</span>
-            </button>
+          <div class="title-header">
+            <h2>Search Results</h2>
+            <div class="c1-dates-slider" id="date-buttons-container">
+            </div>
           </div>
           <div class="c1-rides-list">
             <div class="c1-ride">
@@ -204,12 +178,119 @@
                 <button class="button-beveled filled">Select</button>
               </div>
             </div>
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled">Select</button>
+              </div>
+            </div>
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled">Select</button>
+              </div>
+            </div>
           </div>
         </div>
+        <footer class="footer-gradient"></footer>
       </section>
-      <section class="main-section c1-pg-3"></section>
+      <section class="main-section active c1-pg-3">
+        <div class="c1-passengers">
+          <div class="title-header">
+            <h2>Passenger Details</h2>
+            <div class="progress-tracker">
+              <div class="step completed"></div>
+              <div class="connector"></div>
+              <div class="step completed"></div>
+              <div class="connector"></div>
+              <div class="step"></div>
+              <div class="connector"></div>
+              <div class="step"></div>
+              <div class="connector"></div>
+              <div class="step"></div>
+            </div>
+          </div>
+          <div class="passenger-list">
+            <div class="c1-passenger-row">
+              <div class="ridetitle">Passenger 1</div>
+              <div class="name-fields">
+                <div class="c1-passenger-item">
+                  <label for="first-name">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
+                </div>
+                <div class="c1-passenger-item">
+                  <label for="family-name">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
+                </div>
+              </div>
+            </div>
+            <div class="c1-passenger-row">
+              <div class="ridetitle">Passenger 2</div>
+              <div class="name-fields">
+                <div class="c1-passenger-item">
+                  <label for="first-name">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
+                </div>
+                <div class="c1-passenger-item">
+                  <label for="family-name">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
+                </div>
+              </div>
+            </div>
+            <div class="c1-passenger-row">
+              <div class="ridetitle">Passenger 2</div>
+              <div class="name-fields">
+                <div class="c1-passenger-item">
+                  <label for="first-name">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
+                </div>
+                <div class="c1-passenger-item">
+                  <label for="family-name">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer-gradient taller">
+          <button class="button-beveled footer-button">Go to select luggage</button>
+        </footer>
+      </section>
     </div>
   </main>
 </body>
-
 </html>
