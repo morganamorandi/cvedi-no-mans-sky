@@ -23,7 +23,22 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <script src=".assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
+
+<!--     <script>
+    $(document).ready(function () {
+      $("#timetable2").hide();
+
+      $(".arrivals").click(function () {
+        $("#timetable").hide();
+        $("#timetable2").show();
+      });
+      $(".departures").click(function () {
+        $("#timetable2").hide();
+        $("#timetable").show();
+      });
+    });
+  </script> -->
 
 </head>
 
@@ -58,10 +73,10 @@
 
   <main>
     <div class="container">
-      <section class="main-section" id="timetable">
+      <section class="main-section active" id="timetable">
         <div class="titolo-bottone-timetable">
           <h2 class="timetable">Departures</h2>
-          <button class="button-page timetable button-beveled">Arrivals</button>
+          <div class="arrivals"><button class="button-page timetable button-beveled">Arrivals</button></div>
         </div>
         <div class="tabella-timetable">
           <table>
@@ -70,7 +85,7 @@
               <th>ride</th>
               <th>to</th>
               <th>platform</th>
-              <th>remarks</th>
+              <th>status</th>
             </tr>
             <tr class="timetable-odd">
               <td>20:15</td>
@@ -84,28 +99,28 @@
               <td>IN29892</td>
               <td>Mustafar</td>
               <td>14</td>
-              <td></td>
+              <td>Closed</td>
             </tr>
             <tr class="timetable-odd">
               <td>21:30</td>
               <td>GO88724</td>
               <td>Tambora City</td>
               <td>23</td>
-              <td>Open</td>
+              <td>Boarding</td>
             </tr>
             <tr class="timetable-even">
               <td>21:35</td>
               <td>DE10948</td>
               <td>Oblimpon</td>
               <td>5</td>
-              <td></td>
+              <td>Closed</td>
             </tr>
             <tr class="timetable-odd">
               <td>22:00</td>
               <td>PA51229</td>
               <td>Sehz-Clar</td>
               <td>12</td>
-              <td>Open</td>
+              <td>Boarding</td>
             </tr>
             <tr class="timetable-even">
               <td>23:00</td>
@@ -117,9 +132,9 @@
           </table>
         </div>
       </section>
-      <section class="main-section active" id="timetable2">
+      <section class="main-section" id="timetable2">
         <div class="titolo-bottone-timetable">
-          <button class="button-page timetable button-beveled">Departures</button>
+          <div class="departures"><button class="timetable button-beveled">Departures</button></div>
           <h2 class="timetable">Arrivals</h2>
         </div>
         <div class="tabella-timetable">
@@ -129,7 +144,7 @@
               <th>ride</th>
               <th>to</th>
               <th>platform</th>
-              <th>remarks</th>
+              <th>status</th>
             </tr>
             <tr class="timetable-odd">
               <td>19:00</td>
@@ -150,7 +165,7 @@
               <td>NU67893</td>
               <td>Curimbuk</td>
               <td>9</td>
-              <td></td>
+              <td>In transit</td>
             </tr>
             <tr class="timetable-even">
               <td>21:15</td>
@@ -164,14 +179,14 @@
               <td>RQ91827</td>
               <td>Guanerma</td>
               <td>42</td>
-              <td></td>
+              <td>Cancelled</td>
             </tr>
             <tr class="timetable-even">
               <td>23:00</td>
               <td>SD10839</td>
               <td>Tolull</td>
               <td>1</td>
-              <td></td>
+              <td>In transit</td>
             </tr>
           </table>
         </div>

@@ -715,31 +715,50 @@ label.labelsmall {
   #FAQS
 \*-----------------------------------*/
 
+.titolo-bottone-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 269px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 160px;
+  padding-right: 160px;
+  position: fixed;
+}
+
 .titolo-bottone-faqs {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 246px;
   justify-content: space-between;
   align-items: center;
+  padding-left: 160px;
+  padding-right: 160px;
+  position: fixed;
 }
 
 .faqs {
   display: inline-block;
-  margin-left: 130px;
-  margin-right: 130px;
 }
 
 .button-page {
   color: var(--misc-teal);
 }
 
+.container-accordion {
+  position: fixed;
+  top: 100px;
+  bottom: 160px;
+  overflow: auto;
+}
+
 .accordion {
   background-color: var(--misc-teal-alpha-15);
   cursor: pointer;
   padding: 12px 18px;
-  width: calc(100% - 260px);
+  width: calc(100% - 320px);
   border: solid var(--misc-teal);
-  border-width: 1px 1px 0 1px;
+  border-width: 2px 2px 0 2px;
   text-align: left;
   outline: none;
   font-size: 15px;
@@ -748,8 +767,8 @@ label.labelsmall {
   font-weight: var(--weight-regular);
   font: var(--fontFamily-orbitron);
   font-size: var(--fontSize-6);
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 160px;
+  margin-right: 160px;
 }
 
 .active-accordion,
@@ -770,14 +789,14 @@ label.labelsmall {
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 0 8px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   border: solid var(--misc-teal);
-  border-width: 0 1px 1px 1px;
-  margin-left: 130px;
-  margin-right: 130px;
+  border-width: 0 2px 2px 2px;
+  margin-left: 160px;
+  margin-right: 160px;
 }
 
 .accordion-ul {
@@ -796,7 +815,9 @@ label.labelsmall {
 .button-assistance {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  position: fixed;
+  bottom: 75px;
+  left: 770px;
 }
 
 /*-----------------------------------*\
