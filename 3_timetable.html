@@ -14,18 +14,35 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+
   <!--
     - css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <script src=".assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
+
+<!--     <script>
+    $(document).ready(function () {
+      $("#timetable2").hide();
+
+      $(".arrivals").click(function () {
+        $("#timetable").hide();
+        $("#timetable2").show();
+      });
+      $(".departures").click(function () {
+        $("#timetable2").hide();
+        $("#timetable").show();
+      });
+    });
+  </script> -->
 
 </head>
 
-<body>  
+<body>
   <nav class="navbar active">
     <ul class="navbar-list">
       <li class="navbar-item">
@@ -54,13 +71,144 @@
     </ul>
   </nav>
 
-  <main> 
+  <main>
     <div class="container">
-      <section class="main-section" id="timetable">here</section>
-      <section class="main-section" id="faqs">here</section>
-      <section class="main-section" id="map">here</section>
+      <section class="main-section active" id="timetable">
+        <div class="titolo-bottone-timetable">
+          <h2 class="timetable">Departures</h2>
+          <div class="arrivals"><button class="button-page timetable button-beveled">Arrivals</button></div>
+        </div>
+        <div class="tabella-timetable">
+          <table>
+            <tr>
+              <th>time</th>
+              <th>ride</th>
+              <th>to</th>
+              <th>platform</th>
+              <th>status</th>
+            </tr>
+            <tr class="timetable-odd">
+              <td>20:15</td>
+              <td>DZ96124</td>
+              <td>Geonosis</td>
+              <td>13</td>
+              <td>Delayed</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>20:45</td>
+              <td>IN29892</td>
+              <td>Mustafar</td>
+              <td>14</td>
+              <td>Closed</td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>21:30</td>
+              <td>GO88724</td>
+              <td>Tambora City</td>
+              <td>23</td>
+              <td>Boarding</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>21:35</td>
+              <td>DE10948</td>
+              <td>Oblimpon</td>
+              <td>5</td>
+              <td>Closed</td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>22:00</td>
+              <td>PA51229</td>
+              <td>Sehz-Clar</td>
+              <td>12</td>
+              <td>Boarding</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>23:00</td>
+              <td>PR29485</td>
+              <td>Caracall</td>
+              <td>3</td>
+              <td>Delayed</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="main-section" id="timetable2">
+        <div class="titolo-bottone-timetable">
+          <div class="departures"><button class="timetable button-beveled">Departures</button></div>
+          <h2 class="timetable">Arrivals</h2>
+        </div>
+        <div class="tabella-timetable">
+          <table>
+            <tr>
+              <th>time</th>
+              <th>ride</th>
+              <th>to</th>
+              <th>platform</th>
+              <th>status</th>
+            </tr>
+            <tr class="timetable-odd">
+              <td>19:00</td>
+              <td>DZ98117</td>
+              <td>Geonosis</td>
+              <td>13</td>
+              <td>Delayed</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>19:50</td>
+              <td>GF74393</td>
+              <td>Munison</td>
+              <td>21</td>
+              <td>Arrived</td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>20:20</td>
+              <td>NU67893</td>
+              <td>Curimbuk</td>
+              <td>9</td>
+              <td>In transit</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>21:15</td>
+              <td>IN29892</td>
+              <td>Muursa</td>
+              <td>28</td>
+              <td>Delayed</td>
+            </tr>
+            <tr class="timetable-odd">
+              <td>22:00</td>
+              <td>RQ91827</td>
+              <td>Guanerma</td>
+              <td>42</td>
+              <td>Cancelled</td>
+            </tr>
+            <tr class="timetable-even">
+              <td>23:00</td>
+              <td>SD10839</td>
+              <td>Tolull</td>
+              <td>1</td>
+              <td>In transit</td>
+            </tr>
+          </table>
+        </div>
+      </section>
     </div>
   </main>
 </body>
+<footer class="footer">
+  <div class="news timetable-news">
+    <div class="scrolling-text">
+      <div class="scrolling-text-item timetable-uppercase">delay of 30 minutes of the ride DZ96124</div>
+      <div class="scrolling-text-item">Fluctuation are stable at the moment</div>
+      <div class="scrolling-text-item">Inside temperature: 15° </div>
+      <div class="scrolling-text-item timetable-uppercase">arrival of the ride DZ98117 delayed by 1 hour due to an
+        accident at the departure station</div>
+      <div class="scrolling-text-item"><span class="timetable-uppercase">warning: </span>From 21:00 on July 19th to
+        21:00 on July 20th 2025, trains may be cancelled or changed due to a international strike by Nexus staff
+      </div>
+      <div class="scrolling-text-item timetable-uppercase">work in progress from platform 30 to platform 40</div>
+      <!-- Add More Items Here -->
+    </div>
+  </div>
+</footer>
 
 </html>
