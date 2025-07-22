@@ -1008,18 +1008,15 @@ label.labelsmall {
 }
 
 .container-accordion {
-  position: relative;
-  width: 1130px;
+  position: sticky;
+  width: 100%;
   max-width: 100%; 
   /* top: 130px;
   bottom: 160px; */
   overflow: auto;
-  height: auto;
-  box-sizing: border-box;
+  height: 1000px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 0;
   /* gap: 5px; */
 }
 
