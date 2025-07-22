@@ -985,24 +985,22 @@ label.labelsmall {
 
 .titolo-bottone-services {
   display: flex;
-  flex-wrap: wrap;
-  gap: 269px;
+  /* flex-wrap: wrap; */
+  /* gap: 269px; */
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
   /* position: fixed; */
 }
 
 .titolo-bottone-faqs {
   display: flex;
   flex-wrap: wrap;
-  gap: 246px;
+  /* gap: 246px; */
   justify-content: space-between;
   align-items: center;
   /* position: fixed; */
-}
-
-.faqs {
-  display: inline-block;
 }
 
 .button-page {
@@ -1010,35 +1008,39 @@ label.labelsmall {
 }
 
 .container-accordion {
-  /* position: fixed; */
+  position: sticky;
   width: 100%;
+  max-width: 100%; 
   /* top: 130px;
   bottom: 160px; */
   overflow: auto;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
 }
 
 .accordion {
   background-color: var(--misc-teal-alpha-15);
   cursor: pointer;
-  padding: 12px 18px;
+  padding: 20px 18px;
   width: 100%;
   border: solid var(--misc-teal);
   border-width: 2px 2px 0 2px;
   text-align: left;
   outline: none;
-  font-size: 15px;
   transition: 0.4s;
   color: var(--misc-off-white);
   font-weight: var(--weight-regular);
-  font: var(--fontFamily-orbitron);
+  font-family: var(--fontFamily-orbitron);
   font-size: var(--fontSize-6);
   /* margin: 0 75px; */
 }
 
-.active-accordion,
+/* .active-accordion,
 .accordion:hover {
-  background-color: var(--bg-dark-petrol);
-}
+  background-color: var(--bg-petrol);
+} */
 
 .accordion:after {
   content: '\2228';
@@ -1052,6 +1054,11 @@ label.labelsmall {
   content: "\2227";
 }
 
+.c2-service{
+  display: flex;
+  flex-direction: column;
+}
+
 .panel {
   padding: 0 18px;
   /* width: 1000px; */
@@ -1059,7 +1066,8 @@ label.labelsmall {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   border: solid var(--misc-teal);
-  border-width: 0 2px 2px 2px;
+  border-width: 0 2px 1px 2px;
+  font-size: var(--fontSize-6);
   /* margin: 0 75px; */
 }
 
@@ -1076,13 +1084,14 @@ label.labelsmall {
   text-indent: 5px;
 }
 
-.button-assistance {
-  display: flex;
+.assistance{
+  /* display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 75px;
-  left: 770px;
+  bottom: 75px; */
 }
+
 
 /*-----------------------------------*\
   #TIMETABLE
