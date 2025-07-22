@@ -601,8 +601,6 @@ label.labelsmall {
   gap: 20px;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -658,8 +656,6 @@ label.labelsmall {
   gap: 20px;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -751,8 +747,6 @@ label.labelsmall {
   gap: 20px;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -1115,7 +1109,8 @@ label.labelsmall {
 }
 
 table {
-  width: calc(100% - 300px);
+  width: 100%;
+  max-width: 100%;
   border: none;
   border-collapse: collapse;
 }
