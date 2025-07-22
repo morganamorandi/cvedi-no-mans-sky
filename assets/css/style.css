@@ -90,11 +90,13 @@ a {
 }
 
 html {
+  margin: 0;
   font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background-color: var(--bg-dark-petrol);
   color: var(--misc-off-white);
   font-family: var(--fontFamily-chakra);
@@ -1010,7 +1012,7 @@ label.labelsmall {
 .container-accordion {
   position: sticky;
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   /* top: 130px;
   bottom: 160px; */
   overflow: auto;
