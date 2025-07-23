@@ -114,7 +114,7 @@ body {
 \*-----------------------------------*/
 .container {
   padding-inline: 12px;
-  padding: 20px 150px 0 150px;
+  padding: 20px 150px;
   margin-left: 160px;
 }
 
@@ -1084,14 +1084,6 @@ label.labelsmall {
 .accordion-ul>.accordion-li:before {
   content: "-";
   text-indent: 5px;
-}
-
-.assistance{
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 75px; */
 }
 
 
