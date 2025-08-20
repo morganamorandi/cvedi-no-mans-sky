@@ -985,42 +985,77 @@ label.labelsmall {
   #FAQS
 \*-----------------------------------*/
 
-.titolo-bottone-services {
+/* nasconde tutto di default */
+.faq-section {
+  display: none;
+  height: 100vh;              /* prende tutta la finestra */
+  flex-direction: column;     /* header - content - footer */
+}
+
+/* mostra solo la sezione attiva */
+.faq-section.active {
   display: flex;
-  /* flex-wrap: wrap; */
-  /* gap: 269px; */
+}
+
+/* header fisso */
+.faq-section .titolo-bottone-services, .titolo-bottone-faqs {
+  flex-shrink: 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 100%;
-  /* position: fixed; */
+}
+
+/* contenuto scrollabile */
+.faq-section .container-accordion {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* footer fisso in basso */
+.faq-section .assistance {
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+/* .titolo-bottone-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 269px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .titolo-bottone-faqs {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 246px; */
+  gap: 246px;
   justify-content: space-between;
   align-items: center;
-  /* position: fixed; */
-}
+  position: sticky;
+} */
 
 .button-page {
   color: var(--misc-teal);
 }
 
-.container-accordion {
-  position: sticky;
-  width: 100%;
+/*.container-accordion {
+   position: sticky;
   max-width: 100%;
-  /* top: 130px;
-  bottom: 160px; */
-  overflow: auto;
-  height: 1000px;
+  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
-  /* gap: 5px; */
-}
+  top: 130px;
+  bottom: 160px;
+  height: 70vh; 
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  z-index: 10px;
+}*/
 
 .accordion {
   background-color: var(--misc-teal-alpha-15);
@@ -1039,10 +1074,9 @@ label.labelsmall {
   /* margin: 0 75px; */
 }
 
-/* .active-accordion,
-.accordion:hover {
-  background-color: var(--bg-petrol);
-} */
+.active-accordion {
+  background-color: var(--misc-teal-alpha-15);
+}
 
 .accordion:after {
   content: '\2228';
@@ -1056,7 +1090,7 @@ label.labelsmall {
   content: "\2227";
 }
 
-.c2-service{
+.c2-service {
   display: flex;
   flex-direction: column;
 }

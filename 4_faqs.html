@@ -84,7 +84,7 @@
 
   <main>
     <div class="container">
-      <section class="main-section active" id="faqs">
+      <section class="main-section faq-section active" id="faqs">
         <div class="titolo-bottone-services">
           <h2 class="faqs">Services and assistance</h2>
           <div class="faqs2">
@@ -195,7 +195,7 @@
         </div>
 
       </section>
-      <section class="main-section" id="faqs2">
+      <section class="main-section faq-section" id="faqs2">
         <div class="titolo-bottone-faqs">
           <div class="services"><button class="button-page faqs button-beveled">Services and assistance</button></div>
           <h2 class="faqs">Frequently Asked Questions</h2>
@@ -237,7 +237,7 @@
           <button class="button-assistance button-yellow">Call Assistance</button>
         </div>
       </section>
-      <section class="main-section" id="faqs3">
+      <section class="main-section faq-section" id="faqs3">
         <div>
           <h2>Hai chiamato l'assistenza</h2>
         </div>
@@ -251,7 +251,7 @@
 
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
-        this.classList.toggle("active-accordion");
+        //this.classList.toggle("active-accordion");
         var panel = this.nextElementSibling;
         // Chiudi tutti gli altri
         for (let j = 0; j < acc.length; j++) {
@@ -273,6 +273,19 @@
         }
       });
     }
+
+    function showSection(id) {
+      document.querySelectorAll('.main-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    // esempio: per i bottoni
+    document.querySelector('.services').addEventListener('click', () => showSection('faqs'));
+    document.querySelector('.faqs2').addEventListener('click', () => showSection('faqs2'));
+    document.querySelector('.assistance').addEventListener('click', () => showSection('faqs3'));
+
   </script>
 </body>
 
