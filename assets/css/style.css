@@ -90,11 +90,13 @@ a {
 }
 
 html {
+  margin: 0;
   font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background-color: var(--bg-dark-petrol);
   color: var(--misc-off-white);
   font-family: var(--fontFamily-chakra);
@@ -112,7 +114,7 @@ body {
 \*-----------------------------------*/
 .container {
   padding-inline: 12px;
-  padding: 20px 150px 0 150px;
+  padding: 20px 150px;
   margin-left: 160px;
 }
 
@@ -1010,7 +1012,7 @@ label.labelsmall {
 .container-accordion {
   position: sticky;
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   /* top: 130px;
   bottom: 160px; */
   overflow: auto;
@@ -1082,14 +1084,6 @@ label.labelsmall {
 .accordion-ul>.accordion-li:before {
   content: "-";
   text-indent: 5px;
-}
-
-.assistance{
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 75px; */
 }
 
 
