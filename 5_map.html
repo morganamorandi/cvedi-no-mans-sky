@@ -14,8 +14,10 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+
   <!--
     - css link
   -->
@@ -23,9 +25,157 @@
 
   <script src="./assets/js/script.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mapImage = document.getElementById("mapImage");
+      const buttons = document.querySelectorAll(".button-maps");
+      const directionsContainer = document.getElementById("directionsContainer");
+
+      const maps = {
+        "charging-station": "./assets/images/Charging_station.png",
+        "lounge": "./assets/images/Lounge.png",
+        "luggage-check-in": "./assets/images/Luggage_Check_in.png",
+        "map": "./assets/images/Map.png",
+        "nursery": "./assets/images/Nursery.png",
+        "praying-room": "./assets/images/Praying_room.png",
+        "toilet": "./assets/images/Toilet.png"
+      };
+
+      const directions = {
+        "charging-station": [
+          {
+            icon: "",
+            text: "Turn right from the kiosk"
+          },
+          {
+            icon: "",
+            text: "Turn left and turn immediately left into the perpendicular road to the main road"
+          },
+          {
+            icon: "",
+            text: "Turn left and you will be at your destination"
+          }
+        ],
+        "lounge": [
+          {
+            icon: "",
+            text: "Turn right from this kiosk"
+          },
+          {
+            icon: "",
+            text: "Turn left through the main aisle"
+          },
+          {
+            icon: "",
+            text: "Proceed forward and you will be at your destination"
+          }
+        ],
+        "luggage-check-in": [
+          {
+            icon: "",
+            text: "Turn left from this kiosk"
+          },
+          {
+            icon: "",
+            text: "Proceed forward"
+          },
+          {
+            icon: "",
+            text: "Turn right with the toilets at your left and proceed forward"
+          },
+          {
+            icon: "",
+            text: "Turn right through the main aisle and you will be at your destination"
+          }
+        ],
+        "nursery": [
+          {
+            icon: "",
+            text: "Turn left from this kiosk"
+          },
+          {
+            icon: "",
+            text: "Proceed forward"
+          },
+          {
+            icon: "",
+            text: "Turn right and you will be at your destination"
+          }
+        ],
+        "praying-room": [
+          {
+            icon: "",
+            text: "Turn left from this kiosk"
+          },
+          {
+            icon: "",
+            text: "Proceed forward"
+          },
+          {
+            icon: "",
+            text: "Turn right with the toilets at your left"
+          },
+          {
+            icon: "",
+            text: "Proceed forward and you will be at your destination"
+          }
+        ],
+        "toilet": [
+          {
+            icon: "",
+            text: "Turn left from this kiosk"
+          },
+          {
+            icon: "",
+            text: "Proceed forward"
+          },
+          {
+            icon: "",
+            text: "Turn left and you will be at your destination"
+          }
+        ]
+      };
+
+      const defaultMap = maps["map"];
+      let currentKey = "map"; // mappa attuale
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.map;
+
+          if (!maps[key]) return;
+
+          // Se clicco lo stesso bottone -> reset
+          currentKey = (currentKey === key && currentKey !== "map") ? "map" : key;
+
+          // aggiorna immagine
+          mapImage.src = maps[currentKey];
+
+          buttons.forEach(b => b.classList.remove("active"));
+          if (currentKey !== "map") {
+            btn.classList.add("active");
+          }
+
+          if (currentKey !== "map" && directions[currentKey]) {
+            directionsContainer.innerHTML = `
+            <h3>Directions</h3>
+            <ul>
+              ${directions[currentKey].map(d => `
+                <li>${d.icon} ${d.text}</li>
+              `).join("")}
+            </ul>
+          `;
+          } else {
+            directionsContainer.innerHTML = "";
+          }
+        });
+      });
+    })
+  </script>
+
 </head>
 
-<body>  
+<body>
   <nav class="navbar active">
     <ul class="navbar-list">
       <li class="navbar-item">
@@ -54,11 +204,33 @@
     </ul>
   </nav>
 
-  <main> 
-    <div class="container">
+  <main>
+    <div class="container-map">
       <section class="main-section active" id="map">
-        <h2>Map</h2>
 
+        <div class="map-layout">
+          <div class="map-info">
+            <h3 class="map-title">Services</h3>
+            <div class="box-bottoni-maps">
+              <button class="button-maps button-toilet" data-map="toilet"><span
+                  class="map-services">Toilets</span></button>
+              <button class="button-maps button-lounge" data-map="lounge"><span
+                  class="map-services">Lounge</span></button>
+              <button class="button-maps button-nursery" data-map="nursery"><span
+                  class="map-services">Nursery</span></button>
+              <button class="button-maps button-praying-room" data-map="praying-room"><span class="map-services">Praying
+                  Room</span></button>
+              <button class="button-maps button-luggage-check-in" data-map="luggage-check-in"><span
+                  class="map-services">Luggage Check-in</span></button>
+              <button class="button-maps button-charging-station" data-map="charging-station"><span
+                  class="map-services">Charging Station</span></button>
+            </div>
+            <div id="directionsContainer" class="directions"></div>
+          </div>
+          <div class="map-display">
+            <img id="mapImage" src="./assets/images/Map.png" alt="map">
+          </div>
+        </div>
       </section>
     </div>
   </main>
