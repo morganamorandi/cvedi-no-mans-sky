@@ -216,9 +216,9 @@
 
       const updatedData = assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
 
-      data.departures = assignRandomDestinationsWithMargin(data.departures, "to", 30);
+      data.departures = assignRandomDestinationsWithMargin(data.departures, "to", 60);
 
-      data.arrivals = assignRandomDestinationsWithMargin(data.arrivals, "from", 30);
+      data.arrivals = assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
 
       function parseTime(timeTransform) {
         const [h, m] = timeTransform.split(":").map(Number);
