@@ -362,15 +362,40 @@ label.labelsmall {
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
-.sb-prompt {
-  height: 300px;
-  width: 250px;
-  background-color: var(--misc-light-petrol-gray);
-  margin: 200px 150px auto auto;
-  border: 30px;
-  border-color: var(--misc-teal);
-  align-content: center;
-  text-align: center;
+.prompts{
+ position: absolute;
+}
+
+.sb-prompt-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.sb-prompt-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.sb-prompt-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+
+.sb-prompt-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-right: 50px;
 }
 
 .sb-button {
@@ -378,7 +403,6 @@ label.labelsmall {
   width: 150px;
   background-color: var(--misc-teal-alpha-15);
   margin: 100px auto;
-  cursor: grab;
 }
 
 .center {
