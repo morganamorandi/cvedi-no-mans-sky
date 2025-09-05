@@ -55,6 +55,9 @@
   </nav>
   <main> 
     <div class="container" id="tickets">
+
+
+      <!--region SEARCH SECTION-->
       <section class="main-section c1-pg-1">
         <div class="c1-search">
           <h2>Ride Search</h2>
@@ -80,9 +83,9 @@
             <div class="c1-search-item short">
               <label for="passengers">Passengers</label><br>
               <div class="counter">
-                <button class="button-round" id="minus">−</button>
-                <input class="textfield c1-search-field" type="text" placeholder="0" id="passengers" style="text-align: center;"/>
-                <button class="button-round" id="plus" onclick="addPassenger">+</button>
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" id="passengers" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
               </div>
             </div>
           </div>
@@ -101,6 +104,10 @@
           </div>
         </div>
       </section>
+      <!--endregion-->
+
+
+      <!--region RIDES SECTION-->
       <section class="main-section c1-pg-2">
         <div class="c1-results">
           <div class="title-header">
@@ -129,7 +136,7 @@
                 <span class="rideprice">17.99 ₱</span>
               </div>
               <div class="c1-select">
-                <button class="button-beveled filled">Select</button>
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
               </div>
             </div>
             <div class="c1-ride">
@@ -152,7 +159,7 @@
                 <span class="rideprice">17.99 ₱</span>
               </div>
               <div class="c1-select">
-                <button class="button-beveled filled">Select</button>
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
               </div>
             </div>
             <div class="c1-ride">
@@ -175,7 +182,7 @@
                 <span class="rideprice">17.99 ₱</span>
               </div>
               <div class="c1-select">
-                <button class="button-beveled filled">Select</button>
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
               </div>
             </div>
             <div class="c1-ride">
@@ -198,7 +205,7 @@
                 <span class="rideprice">17.99 ₱</span>
               </div>
               <div class="c1-select">
-                <button class="button-beveled filled">Select</button>
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
               </div>
             </div>
             <div class="c1-ride">
@@ -221,53 +228,91 @@
                 <span class="rideprice">17.99 ₱</span>
               </div>
               <div class="c1-select">
-                <button class="button-beveled filled">Select</button>
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
+              </div>
+            </div>
+            <div class="c1-ride">
+              <div class="c1-departure">
+                <span class="ridetext">From</span><br>
+                <span class="ridetitle">Tambora City</span><br>
+                <span class="ridesubtitle">TBC</span><br>
+                <span class="ridetime">18:44</span>
+              </div>
+              <div class="c1-duration">
+                <span class="ridetime">2h43m</span>
+              </div>
+              <div class="c1-arrival">
+                <span class="ridetext">To</span><br>
+                <span class="ridetitle">Neo-Babylon</span><br>
+                <span class="ridesubtitle">NBB</span><br>
+                <span class="ridetime">21:17</span>
+              </div>
+              <div class="c1-price">
+                <span class="rideprice">17.99 ₱</span>
+              </div>
+              <div class="c1-select">
+                <button class="button-beveled filled" onclick="navigateToNextSection()">Select</button>
               </div>
             </div>
           </div>
         </div>
         <footer class="footer-gradient"></footer>
       </section>
-      <section class="main-section active c1-pg-3">
+      <!--endregion-->
+
+
+      <!--region PASSENGERS SECTION-->
+      <section class="main-section c1-pg-3">
         <div class="c1-passengers">
           <div class="title-header">
-            <h2>Passenger Details</h2>
-            <div class="progress-tracker">
-              <div class="step completed"></div>
-              <div class="connector"></div>
-              <div class="step completed"></div>
-              <div class="connector"></div>
-              <div class="step"></div>
-              <div class="connector"></div>
-              <div class="step"></div>
-              <div class="connector"></div>
-              <div class="step"></div>
+            <div class="title-header-flex">
+              <div class="chosen-ride">
+                <div class="ride-details">
+                  <div class="ridetitle">TBC — NBB</div>
+                  <div class="ridetext">21 nov 18:44</div>
+                </div>
+                <div class="button-square"></div>
+              </div>
+              <div class="progress-tracker">
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Passenger<br>details</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Luggage<br>selection</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Special<br>assistance</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Animal<br>companions</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Payment<br>details</div>
+                </div>
+              </div>
             </div>
+            <h2 style="margin-block-end: 0.1em">Passenger Details</h2>
           </div>
           <div class="passenger-list">
             <div class="c1-passenger-row">
               <div class="ridetitle">Passenger 1</div>
               <div class="name-fields">
                 <div class="c1-passenger-item">
-                  <label for="first-name">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
+                  <label for="first-name1">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name1" placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
-                  <label for="family-name">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
-                </div>
-              </div>
-            </div>
-            <div class="c1-passenger-row">
-              <div class="ridetitle">Passenger 2</div>
-              <div class="name-fields">
-                <div class="c1-passenger-item">
-                  <label for="first-name">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
-                </div>
-                <div class="c1-passenger-item">
-                  <label for="family-name">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
+                  <label for="family-name1">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name1" placeholder="Family Name">
                 </div>
               </div>
             </div>
@@ -275,21 +320,426 @@
               <div class="ridetitle">Passenger 2</div>
               <div class="name-fields">
                 <div class="c1-passenger-item">
-                  <label for="first-name">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name" placeholder="First Name">
+                  <label for="first-name2">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name2" placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
-                  <label for="family-name">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name" placeholder="Family Name">
+                  <label for="family-name2">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name2" placeholder="Family Name">
+                </div>
+              </div>
+            </div>
+            <div class="c1-passenger-row">
+              <div class="ridetitle">Passenger 3</div>
+              <div class="name-fields">
+                <div class="c1-passenger-item">
+                  <label for="first-name3">First Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name3" placeholder="First Name">
+                </div>
+                <div class="c1-passenger-item">
+                  <label for="family-name3">Family Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name3" placeholder="Family Name">
                 </div>
               </div>
             </div>
           </div>
         </div>
         <footer class="footer-gradient taller">
-          <button class="button-beveled footer-button">Go to select luggage</button>
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to select luggage</button>
         </footer>
       </section>
+      <!--endregion-->
+
+
+      <!--region LUGGAGE SECTION-->
+      <section class="main-section c1-pg-4">
+        <div class="c1-luggage">
+          <div class="title-header">
+            <div class="title-header-flex">
+              <div class="chosen-ride">
+                <div class="ride-details">
+                  <div class="ridetitle">TBC — NBB</div>
+                  <div class="ridetext">21 nov 18:44</div>
+                </div>
+                <div class="button-square"></div>
+              </div>
+              <div class="progress-tracker">
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Passenger<br>details</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Luggage<br>selection</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Special<br>assistance</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Animal<br>companions</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Payment<br>details</div>
+                </div>
+              </div>
+            </div>
+            <h2>Luggage selection</h2>
+          </div>
+          <div class="c1-luggage-options">
+            <div class="c1-option">
+              <div class="optionbox">
+                <div class="optiontitle">Personal item</div>
+                <div class="optiondetails">
+                  <div class="optionimg"></div>
+                  <div class="optiontext">
+                    <div class="optionsize">40x20x25</div>
+                    <div class="optioninfo">Must fit under seat in front of you</div>
+                  </div>
+                </div>
+              </div>
+              <div class="counter luggage">
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
+              </div>
+            </div>
+            <div class="c1-option">
+              <div class="optionbox">
+                <div class="optiontitle">Personal item</div>
+                <div class="optiondetails">
+                  <div class="optionimg"></div>
+                  <div class="optiontext">
+                    <div class="optionsize">55x40x20</div>
+                    <div class="optioninfo">Must be stored in the overhead locker</div>
+                  </div>
+                </div>
+              </div>
+              <div class="counter luggage">
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
+              </div>
+            </div>
+            <div class="c1-option">
+              <div class="optionbox">
+                <div class="optiontitle">Personal item</div>
+                <div class="optiondetails">
+                  <div class="optionimg"></div>
+                  <div class="optiontext">
+                    <div class="optionsize">80x120x120</div>
+                    <div class="optioninfo">Must be checked in. Maximum weight 10 qM<sub>☉</sub></div>
+                  </div>
+                </div>
+              </div>
+              <div class="counter luggage">
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer-gradient taller">
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to select assistance</button>
+        </footer>
+      </section>
+      <!--endregion-->
+
+
+      <!--region ASSISTANCE SECTION-->
+      <section class="main-section active c1-pg-5">
+        <div class="c1-assistance">
+          <div class="title-header">
+            <div class="title-header-flex">
+              <div class="chosen-ride">
+                <div class="ride-details">
+                  <div class="ridetitle">TBC — NBB</div>
+                  <div class="ridetext">21 nov 18:44</div>
+                </div>
+                <div class="button-square"></div>
+              </div>
+              <div class="progress-tracker">
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Passenger<br>details</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Luggage<br>selection</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Special<br>assistance</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Animal<br>companions</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Payment<br>details</div>
+                </div>
+              </div>
+            </div>
+            <h2>Special assistance</h2>
+          </div>
+          <div class="assistance-list">
+            <div class="c1-assistance-row">
+              <div class="c1-assistance-passenger">
+                <div class="ridetitle">Passenger 1</div>
+                <div class="buttonsubtitle" style="text-transform: none">Onyx Raptor</div>
+              </div>
+              <div class="c1-assistance-options">
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c1-assistance-row">
+              <div class="c1-assistance-passenger">
+                <div class="ridetitle">Passenger 1</div>
+                <div class="buttonsubtitle" style="text-transform: none">Onyx Raptor</div>
+              </div>
+              <div class="c1-assistance-options">
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c1-assistance-row">
+              <div class="c1-assistance-passenger">
+                <div class="ridetitle">Passenger 1</div>
+                <div class="buttonsubtitle" style="text-transform: none">Onyx Raptor</div>
+              </div>
+              <div class="c1-assistance-options">
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+                <div class="c1-option assistance">
+                  <input type="checkbox" class="checkbox"/>
+                  <div class="optiondetails assistance">
+                    <img src="https://i.imgur.com/VrDtZjf.png" height="36px"/>
+                    <div class="optiontext">Wheelchair user</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer-gradient taller">
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to animal companions</button>
+        </footer>
+      </section>
+      <!--endregion-->
+
+
+      <!--region ANIMALS SECTION-->
+      <section class="main-section c1-pg-6">
+        <div class="c1-animals">
+          <div class="title-header">
+            <div class="title-header-flex">
+              <div class="chosen-ride">
+                <div class="ride-details">
+                  <div class="ridetitle">TBC — NBB</div>
+                  <div class="ridetext">21 nov 18:44</div>
+                </div>
+                <div class="button-square"></div>
+              </div>
+              <div class="progress-tracker">
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Passenger<br>details</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Luggage<br>selection</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Special<br>assistance</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Animal<br>companions</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step"></div>
+                  <div class="trackertext">Payment<br>details</div>
+                </div>
+              </div>
+            </div>
+            <h2>Animal companions</h2>
+          </div>
+          <div class="c1-animal-options">
+            <div class="c1-option">
+              <div class="optionbox">
+                <div class="optiontitle">Assistance Animal</div>
+                <div class="optiondetails">
+                  <div class="optionimg"></div>
+                  <div class="optiontext">
+                    <div class="optioninfo">Animal for health/disability assistance</div>
+                  </div>
+                </div>
+              </div>
+              <div class="counter animal">
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
+              </div>
+            </div>
+            <div class="c1-option">
+              <div class="optionbox">
+                <div class="optiontitle">Pet</div>
+                <div class="optiondetails">
+                  <div class="optionimg"></div>
+                  <div class="optiontext">
+                    <div class="optioninfo">Pet for companionship (not health)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="counter animal">
+                <button class="button-round minus-btn">−</button>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <button class="button-round plus-btn">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer-gradient taller">
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to payment details</button>
+        </footer>
+      </section>
+      <!--endregion-->
+
+
+      <!--region PAYMENT SECTION-->
+      <section class="main-section c1-pg-7">
+        <div class="c1-payment">
+          <div class="title-header">
+            <div class="title-header-flex">
+              <div class="chosen-ride">
+                <div class="ride-details">
+                  <div class="ridetitle">TBC — NBB</div>
+                  <div class="ridetext">21 nov 18:44</div>
+                </div>
+                <div class="button-square"></div>
+              </div>
+              <div class="progress-tracker">
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Passenger<br>details</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Luggage<br>selection</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Special<br>assistance</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Animal<br>companions</div>
+                </div>
+                <div class="connector"></div>
+                <div class="step1">
+                  <div class="step completed"></div>
+                  <div class="trackertext">Payment<br>details</div>
+                </div>
+              </div>
+            </div>
+            <h2>Payment details</h2>
+          </div>
+        </div>
+        <footer class="footer-gradient taller">
+          <button class="button-beveled footer-button">Confirm and pay</button>
+        </footer>
+      </section>
+      <!--endregion-->
+
+
+      <!--region CONFIRMATION SECTION-->
+      <section class="main-section c1-pg-8">
+        <div class="c1-confirmation">
+          <div class="title-header">
+            <h2>Ticket purchase successful!</h2>
+          </div>
+          <div class="order-details">
+            Thank you for choosing NMC.<br>We hope you have a pleasant traveling experience with us.
+            <br>
+            <h4>You can view your ticket in the Check-in section.</h4>
+          </div>
+        </div>
+        <footer class="footer-gradient"></footer>
+      </section>
+      <!--endregion-->
+
+
     </div>
   </main>
 </body>

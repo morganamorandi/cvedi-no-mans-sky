@@ -1,3 +1,5 @@
+// Funzione elemento date
+
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('date-buttons-container');
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -41,8 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Define page flow order
-const PAGE_FLOW = ['c1-pg-1', 'c1-pg-2', 'c1-pg-3', 'c1-pg-4']; // Add all your page classes
+// Funzione Next Page
+
+const PAGE_FLOW = ['c1-pg-1', 'c1-pg-2', 'c1-pg-3', 'c1-pg-4', 'c1-pg-5', 'c1-pg-6', 'c1-pg-7', 'c1-pg-8']; // Add all your page classes
 
 function navigateToNextSection() {
     // Find current active section
@@ -79,3 +82,89 @@ function navigateToNextSection() {
 document.querySelectorAll('.next-button').forEach(button => {
     button.addEventListener('click', navigateToNextSection);
 });
+
+
+// Funzione counter
+
+// Initialize all counters on the page
+function initCounters() {
+    // Find all counter containers
+    const counterContainers = document.querySelectorAll('.counter');
+
+    console.log(`Found ${counterContainers.length} counter containers`);
+
+    // Check if any counters were found
+    if (counterContainers.length === 0) {
+        console.error('No counter containers found with class "counter"');
+        return;
+    }
+
+    counterContainers.forEach((container, index) => {
+        console.log(`Processing counter #${index + 1}`, container);
+
+        // Find elements within this specific counter container using CLASSES
+        const minusBtn = container.querySelector('.minus-btn');
+        const plusBtn = container.querySelector('.plus-btn');
+        const inputField = container.querySelector('.counter-input');
+
+        // Debug: Check if elements exist
+        console.log(`Counter #${index + 1} - minusBtn:`, minusBtn);
+        console.log(`Counter #${index + 1} - plusBtn:`, plusBtn);
+        console.log(`Counter #${index + 1} - inputField:`, inputField);
+
+        // Skip this counter if any element is missing
+        if (!minusBtn) {
+            console.error(`Counter #${index + 1} is missing minus button with class 'minus-btn'`);
+        }
+        if (!plusBtn) {
+            console.error(`Counter #${index + 1} is missing plus button with class 'plus-btn'`);
+        }
+        if (!inputField) {
+            console.error(`Counter #${index + 1} is missing input field with class 'counter-input'`);
+        }
+
+        if (!minusBtn || !plusBtn || !inputField) {
+            console.error(`Counter #${index + 1} skipped due to missing elements`);
+            return;
+        }
+
+        // Initialize counter value
+        let count = 0;
+
+        // Update the input field
+        function updateCounter() {
+            inputField.value = count;
+            console.log(`Counter #${index + 1} updated to:`, count);
+        }
+
+        // Event listeners for buttons
+        minusBtn.addEventListener('click', () => {
+            console.log(`Counter #${index + 1} minus button clicked`);
+            if (count > 0) {
+                count--;
+                updateCounter();
+            } else {
+                console.log(`Counter #${index + 1} already at minimum value (0)`);
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            console.log(`Counter #${index + 1} plus button clicked`);
+            count++;
+            updateCounter();
+        });
+
+        // Initialize the counter display
+        updateCounter();
+
+        console.log(`Counter #${index + 1} initialized successfully`);
+    });
+}
+
+// Initialize counters when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounters);
+} else {
+    // DOM is already ready
+    initCounters();
+}
