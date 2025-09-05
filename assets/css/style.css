@@ -985,80 +985,42 @@ label.labelsmall {
   #FAQS
 \*-----------------------------------*/
 
-/* nasconde tutto di default */
 .faq-section {
   display: none;
-  height: 100vh;
-  /* prende tutta la finestra */
+  height: 90vh;
   flex-direction: column;
-  /* header - content - footer */
 }
 
-/* mostra solo la sezione attiva */
 .faq-section.active {
   display: flex;
 }
 
-/* header fisso */
 .faq-section .titolo-bottone-services,
 .titolo-bottone-faqs {
+  position: sticky;
   flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* contenuto scrollabile */
 .faq-section .container-accordion {
-  flex: 1;
+  flex: 1 1 auto;
   overflow-y: auto;
+   max-height: calc(90vh - 80px - 60px);
   padding: 10px;
 }
 
-/* footer fisso in basso */
 .faq-section .assistance {
   flex-shrink: 0;
   padding: 10px;
-}
-
-/* .titolo-bottone-services {
   display: flex;
-  flex-wrap: wrap;
-  gap: 269px;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
+  justify-content: center;
 }
-
-.titolo-bottone-faqs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 246px;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-} */
 
 .button-page {
   color: var(--misc-teal);
 }
-
-/*.container-accordion {
-   position: sticky;
-  max-width: 100%;
-  margin-bottom: 200px;
-  display: flex;
-  flex-direction: column;
-  top: 130px;
-  bottom: 160px;
-  height: 70vh; 
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 10px;
-  z-index: 10px;
-}*/
 
 .accordion {
   background-color: var(--misc-teal-alpha-15);
@@ -1074,7 +1036,6 @@ label.labelsmall {
   font-weight: var(--weight-regular);
   font-family: var(--fontFamily-orbitron);
   font-size: var(--fontSize-6);
-  /* margin: 0 75px; */
 }
 
 .active-accordion {
@@ -1093,21 +1054,14 @@ label.labelsmall {
   content: "\2227";
 }
 
-.c2-service {
-  display: flex;
-  flex-direction: column;
-}
-
 .panel {
   padding: 0 18px;
-  /* width: 1000px; */
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   border: solid var(--misc-teal);
   border-width: 0 2px 1px 2px;
   font-size: var(--fontSize-6);
-  /* margin: 0 75px; */
 }
 
 .accordion-ul {
