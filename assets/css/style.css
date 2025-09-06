@@ -1177,6 +1177,9 @@ th {
   cursor: pointer;
   border: none;
   display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-maps.active {
@@ -1208,7 +1211,7 @@ th {
 .map-title {
   padding-top: 20px;
   padding-left: 20px;
-    font-weight: var(--weight-semiBold);
+  font-weight: var(--weight-semiBold);
   color: var(--misc-off-white);
 }
 
@@ -1268,6 +1271,16 @@ th {
   width: 50px;
   height: 50px;
   margin: 20px;
+}
+
+.map-icons {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.map-services {
+  text-align: left;
 }
 
 /*-----------------------------------*\
