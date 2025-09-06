@@ -1264,6 +1264,12 @@ th {
   font-size: var(--fontSize-6);
 }
 
+.direction-icon {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/

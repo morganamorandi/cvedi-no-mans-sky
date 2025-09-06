@@ -44,7 +44,7 @@
       const directions = {
         "charging-station": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startright.svg",
             text: "Turn right from the kiosk"
           },
           {
@@ -52,13 +52,13 @@
             text: "Turn left and turn immediately left into the perpendicular road to the main road"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_arriveleft.svg",
             text: "Turn left and you will be at your destination"
           }
         ],
         "lounge": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startright.svg",
             text: "Turn right from this kiosk"
           },
           {
@@ -72,11 +72,11 @@
         ],
         "luggage-check-in": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startleft.svg",
             text: "Turn left from this kiosk"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_straight.svg",
             text: "Proceed forward"
           },
           {
@@ -84,31 +84,31 @@
             text: "Turn right with the toilets at your left and proceed forward"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_arriveright.svg",
             text: "Turn right through the main aisle and you will be at your destination"
           }
         ],
         "nursery": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startleft.svg",
             text: "Turn left from this kiosk"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_straight.svg",
             text: "Proceed forward"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_arriveright.svg",
             text: "Turn right and you will be at your destination"
           }
         ],
         "praying-room": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startleft.svg",
             text: "Turn left from this kiosk"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_straight.svg",
             text: "Proceed forward"
           },
           {
@@ -122,15 +122,15 @@
         ],
         "toilet": [
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_startleft.svg",
             text: "Turn left from this kiosk"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_straight.svg",
             text: "Proceed forward"
           },
           {
-            icon: "",
+            icon: "./assets/images/icons/direction_arriveleft.svg",
             text: "Turn left and you will be at your destination"
           }
         ]
@@ -145,10 +145,8 @@
 
           if (!maps[key]) return;
 
-          // Se clicco lo stesso bottone -> reset
           currentKey = (currentKey === key && currentKey !== "map") ? "map" : key;
 
-          // aggiorna immagine
           mapImage.src = maps[currentKey];
 
           buttons.forEach(b => b.classList.remove("active"));
@@ -161,7 +159,7 @@
             <h3>Directions</h3>
             <ul>
               ${directions[currentKey].map(d => `
-                <li>${d.icon} ${d.text}</li>
+                <li>${d.icon ? `<img src="${d.icon}" alt="direction icon" class="direction-icon">` : ""} ${d.text}</li>
               `).join("")}
             </ul>
           `;
