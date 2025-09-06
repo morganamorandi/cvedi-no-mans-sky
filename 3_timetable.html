@@ -26,18 +26,6 @@
   <script src="assets/js/script.js"></script>
 
   <script>
-    /* $(document).ready(function () {
-      $("#timetable2").hide();
-
-      $(".arrivals").click(function () {
-        $("#timetable").hide();
-        $("#timetable2").show();
-      });
-      $(".departures").click(function () {
-        $("#timetable2").hide();
-        $("#timetable").show();
-      });
-    }); */
 
     const data = {
       "departures": [
@@ -176,7 +164,7 @@
       return { departures, arrivals };
     }
 
-    const destinations = ["Geonosis", "Mustafar", "Tambora City", "Oblimpon", "Sehz-Clar", "Caracall", "Munison", "Curimbuk", "Muursa", "Tolull", "Neo-Babylon", "Arraks-Dull", "Gondwana" ];
+    const destinations = ["Geonosis", "Mustafar", "Tambora City", "Oblimpon", "Sehz-Clar", "Caracall", "Munison", "Curimbuk", "Muursa", "Tolull", "Neo-Babylon", "Arraks-Dull", "Gondwana"];
 
     function assignRandomDestinationsWithMargin(items, key = "to", margin = 60) {
       const toMinutes = (t) => {
@@ -214,11 +202,11 @@
       console.log("Departures table:", departuresTable);
       console.log("Arrivals table:", arrivalsTable);
 
-      const updatedData = assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
+      assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
 
-      data.departures = assignRandomDestinationsWithMargin(data.departures, "to", 60);
+      assignRandomDestinationsWithMargin(data.departures, "to", 60);
 
-      data.arrivals = assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
+      assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
 
       function parseTime(timeTransform) {
         const [h, m] = timeTransform.split(":").map(Number);
@@ -267,9 +255,7 @@
           .slice(0, 6)
           .map(item => {
             if (type === "departures") {
-              if (item.status === "Cancelled") {
-                return item;
-              }
+              if (item.status === "Cancelled") return item;
 
               const scheduled = parseTime(item.time);
               const effective = scheduled + (item.delay || 0);
@@ -286,16 +272,17 @@
             }
 
             else if (type === "arrivals") {
-              if (item.status === "Cancelled") {
-                return item;
-              }
+              if (item.status === "Cancelled") return item;
+
               const scheduled = parseTime(item.time);
               const effective = scheduled + (item.delay || 0);
               const mins = effective - currentMinutes;
 
-              if (mins > 0) {
+              if (mins > 5 && item.delay) {
+                return { ...item, status: "Delayed" };
+              } else if (mins <= 5 && mins > 0) {
                 return { ...item, status: "In transit" };
-              } else {
+              } else if (mins <= 0) {
                 return { ...item, status: "Arrived" };
               }
             }
@@ -305,7 +292,7 @@
       }
 
 
-      function populateTable(table, items) {
+      function populateTable(table, items, type) {
         table.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
 
         items.forEach((row, i) => {
@@ -313,10 +300,12 @@
           tr.className = i % 2 === 0 ? "timetable-odd" : "timetable-even";
           const delayVal = row.delay !== undefined ? row.delay : 0;
 
+          const destination = type === "departures" ? row.to : row.from;
+
           tr.innerHTML = `
             <td>${row.time}</td>
             <td>${row.ride}</td>
-            <td>${row.to}</td>
+            <td>${destination}</td>
             <td>${row.platform}</td>
             <td>${row.status}</td>
             <td class="delay-cell">${delayVal}</td>
@@ -325,17 +314,53 @@
         });
       }
 
+      function loadOrGeneratePlatformsAndDestinations() {
+        // Controllo se ho già salvato in localStorage
+        const saved = localStorage.getItem("timetable Platforms and Destinations");
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          data.departures = parsed.departures;
+          data.arrivals = parsed.arrivals;
+          return;
+        }
+
+        assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
+        assignRandomDestinationsWithMargin(data.departures, "to", 60);
+        assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
+
+        localStorage.setItem(
+          "timetable Platforms and Destinations",
+          JSON.stringify({ departures: data.departures, arrivals: data.arrivals })
+        );
+      }
+
+      loadOrGeneratePlatformsAndDestinations();
+
       function refreshTables() {
         const departures = selectSix(data.departures, "departures");
         const arrivals = selectSix(data.arrivals, "arrivals");
 
-        populateTable(departuresTable, departures);
-        populateTable(arrivalsTable, arrivals);
+        populateTable(departuresTable, departures, "departures");
+        populateTable(arrivalsTable, arrivals, "arrivals");
       }
 
       refreshTables();
       setInterval(refreshTables, 30000);
+
+      document.querySelectorAll('.btn-arrivals').forEach(btn => {
+        btn.addEventListener('click', () => showSection('timetable2'));
+      });
+      document.querySelectorAll('.btn-departures').forEach(btn => {
+        btn.addEventListener('click', () => showSection('timetable'));
+      });
     });
+
+    function showSection(id) {
+      document.querySelectorAll('.main-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
 
   </script>
 
@@ -375,7 +400,8 @@
       <section class="main-section active" id="timetable">
         <div class="titolo-bottone-timetable">
           <h2 class="timetable">Departures</h2>
-          <div class="arrivals"><button class="button-page timetable button-beveled">Arrivals</button></div>
+          <div class="btn-arrivals arrivals"><button class="button-page timetable button-beveled">Arrivals</button>
+          </div>
         </div>
         <div class="tabella-timetable">
           <table>
@@ -392,7 +418,7 @@
       </section>
       <section class="main-section" id="timetable2">
         <div class="titolo-bottone-timetable">
-          <div class="departures"><button class="timetable button-beveled">Departures</button></div>
+          <div class="btn-departures departures"><button class="timetable button-beveled">Departures</button></div>
           <h2 class="timetable">Arrivals</h2>
         </div>
         <div class="tabella-timetable">
@@ -400,10 +426,10 @@
             <tr>
               <th>time</th>
               <th>ride</th>
-              <th>to</th>
+              <th>from</th>
               <th>platform</th>
               <th>status</th>
-              <th>status</th>
+              <th>delay</th>
             </tr>
           </table>
         </div>
