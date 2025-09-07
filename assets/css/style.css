@@ -1101,9 +1101,13 @@ label.labelsmall {
   text-indent: 5px;
 }
 
-.assistance-text {
+#faqs3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
+
 
 /*-----------------------------------*\
   #TIMETABLE
