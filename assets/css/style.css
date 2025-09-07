@@ -1454,7 +1454,7 @@ th {
 
 .map-layout {
   display: flex;
-  gap: 33%;
+  gap: 20px;
   align-items: flex-start;
   box-sizing: border-box;
 }
@@ -1481,17 +1481,14 @@ th {
 }
 
 .map-display {
+  display: flex;
   flex: 2;
-  position: fixed;
-  right: 0;
+  justify-content: flex-end;
   box-sizing: border-box;
 }
 
 .map-display img {
-  max-height: 100vh;
-  max-width: 100vw;
-  width: auto;
-  height: auto;
+  height: 100vh;
   margin: 0;
   object-fit: contain;
 }
