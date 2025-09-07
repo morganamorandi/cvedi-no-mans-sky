@@ -990,6 +990,8 @@ label.labelsmall {
   border: 2px solid var(--misc-teal);
   gap: 10px;
   padding: 25px 40px;
+  min-height: 150px;
+  justify-content: center;
 }
 
 .optiontitle {
@@ -1001,7 +1003,7 @@ label.labelsmall {
   pointer-events: none;
 }
 
-.optiondetails {
+.optiondetails.luggage {
   display: flex;
   flex-direction: row;
   gap: 10px;
