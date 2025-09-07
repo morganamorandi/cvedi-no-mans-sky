@@ -1101,6 +1101,9 @@ label.labelsmall {
   text-indent: 5px;
 }
 
+.assistance-text {
+  text-align: center;
+}
 
 /*-----------------------------------*\
   #TIMETABLE
