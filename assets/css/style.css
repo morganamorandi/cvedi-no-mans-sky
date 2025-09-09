@@ -144,7 +144,7 @@ h1 {
 
 h2 {
   font-family: var(--fontFamily-orbitron);
-  font-size: var(--fontSize-3);
+  font-size: var(--fontSize-2);
   font-weight: var(--weight-semiBold);
 }
 
@@ -357,54 +357,26 @@ label.labelsmall {
 .standby {
   padding-top: 200px;
   text-align: center;
+  cursor: pointer;
 }
 
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
-.prompts{
- position: absolute;
-}
 
-.sb-prompt-1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+.sb-section-title{
+  font-weight: var(--weight-semiBold);
   margin-left: 50px;
 }
 
-.sb-prompt-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-right: 50px;
-}
-
-.sb-prompt-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  margin-left: 60px;
-}
-
-.sb-prompt-4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  margin-right: 50px;
-}
-
-.sb-button {
-  height: 50px;
-  width: 150px;
-  background-color: var(--misc-teal-alpha-15);
-  margin: 100px auto;
-}
-
+/* .system{
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: clip;
+} */
+ 
 .center {
   height: 180px;
   width: 180px;
@@ -420,6 +392,7 @@ label.labelsmall {
   margin-left: -100px;
   -webkit-animation: Flare 4s infinite alternate;
   animation: Flare 4s infinite alternate;
+  cursor: pointer;
 }
 
 .orbit1 {
@@ -482,17 +455,28 @@ label.labelsmall {
   animation: Rotation 35s linear infinite reverse;
 }
 
-.dimension {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 40px;
-  width: 40px;
-  margin-top: -40px;
-  background: radial-gradient(var(--misc-off-white), var(--misc-off-white));
-  border-radius: 50%;
-  -webkit-animation: Rotation 3s linear infinite;
-  animation: Rotation 3s linear infinite;
+@-webkit-keyframes Rotation {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Rotation {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 @-webkit-keyframes Flare {
@@ -519,39 +503,167 @@ label.labelsmall {
   }
 }
 
-@-webkit-keyframes Rotation {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
+/* @property --angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
 
+@property --z {
+  syntax: '<integer>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes revolve {
+  from {
+    --angle: 0deg;
+    --z: -1;
+  }
   to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+    --angle: 360deg;
+    --z: 0;
   }
 }
 
-@keyframes Rotation {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
+.center, .orbit1, .orbit2, .orbit3, .orbit4{
+  grid-area: 1 / 1;
+}
 
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+.orbit1, .orbit2, .orbit3, .orbit4{
+   --x-amplitude: 150px;
+  --y-amplitude: 40px;
+  --x: calc(cos(var(--angle)) * var(--x-amplitude));
+  --y: calc(sin(var(--angle)) * var(--y-amplitude));
+  transform:
+    rotate(var(--rotation))
+    translate(var(--x), var(--y))
+    rotate(calc(var(--rotation) * -1));
+  z-index: calc(var(--z));
+  animation: revolve 8s linear infinite;
+} 
+
+.orbit1 {
+  --rotation: 0deg;
+  animation-delay: 0s;
+}
+
+.orbit2 {
+  --rotation: 60deg;
+  animation-delay: -2s;
+}
+
+.orbit3 {
+  --rotation: 120deg;
+  animation-delay: -4s;
+}
+
+.orbit4{
+  --rotation: 180deg;
+  animation-delay: -6s;
+} */
+
+.dimension {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  margin-top: -40px;
+  background: radial-gradient(var(--misc-off-white), var(--misc-off-white));
+  border-radius: 50%;
+  -webkit-animation: Rotation 3s linear infinite;
+  animation: Rotation 3s linear infinite;
+}
+
+
+.prompts{
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+}
+
+.sb-prompt-1 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.sb-prompt-2 {
+  position: absolute;
+  top: 50px;
+  right: 150px;
+}
+
+.sb-prompt-3 {
+  position: absolute;
+  top: 420px;
+  left: 150px;
+}
+
+.sb-prompt-4 {
+  position: absolute;
+  top: 420px;
+  right: 170px;
+}
+
+.sb-text-1 {
+  font-family: var(--fontFamily-orbitron);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  color: var(--misc-off-white);
+  font-size: var(--fontSize-8);
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sb-text-2 {
+  font-family: var(--fontFamily-orbitron);
+  font-weight: var(--weight-bold);
+  color: var(--misc-off-white);
+  font-size: 1.3rem;
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sb-button {
+  font-family: var(--fontFamily-chakra);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px 30px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 202 60' preserveAspectRatio='none'%3E%3Cpath d='M9.617 1H201v44.073L188.453 59H1V9.828L9.617 1Z' fill='%235ECCCC' fill-opacity='0.13' stroke='%235ECCCC' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  color: var(--misc-teal);
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  position: absolute;
+  top: 175px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*-----------------------------------*\
   #HOME DIRECTORY
 \*-----------------------------------*/
+.sb-selection-title{
+  color: var(--misc-teal);
+  text-align: center;
+  padding-top: 140px;
+}
 .main-directory {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
-  gap: 40px;
+  gap: 50px;
+  padding-top: 80px;
 }
 
 .d-item {
@@ -559,6 +671,43 @@ label.labelsmall {
   background-image: var(--svg-box-bg);
   width: 200px;
   height: 268px;
+  position: relative;
+}
+
+.tickets-icon, .timetable-icon{
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkin-icon, .assistance-icon, .map-icon {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.d-button{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.d-button-text{
+  font-family: var(--fontFamily-chakra);
+  font-weight: var(--weight-semiBold);
+  font-size: var(--fontSize-7);
+  text-transform: uppercase;
+  color: var(--misc-teal);
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*-----------------------------------*\
