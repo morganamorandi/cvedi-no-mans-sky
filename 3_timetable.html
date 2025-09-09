@@ -25,20 +25,344 @@
 
   <script src="assets/js/script.js"></script>
 
-<!--     <script>
-    $(document).ready(function () {
-      $("#timetable2").hide();
+  <script>
 
-      $(".arrivals").click(function () {
-        $("#timetable").hide();
-        $("#timetable2").show();
+    const data = {
+      "departures": [
+        { "time": "00:10", "ride": "HY59876", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "01:43", "ride": "DW15674", "to": "", "platform": "", "status": "", "delay": 40 },
+        { "time": "02:05", "ride": "QA15415", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "03:58", "ride": "RT15496", "to": "", "platform": "", "status": "", "delay": 15 },
+        { "time": "04:23", "ride": "LK47548", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "05:10", "ride": "QF47291", "to": "", "platform": "", "status": "", "delay": 60 },
+        { "time": "06:15", "ride": "LX03842", "to": "", "platform": "", "status": "", "delay": 20 },
+        { "time": "06:32", "ride": "BP62037", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "06:54", "ride": "MC10584", "to": "", "platform": "", "status": "Cancelled", "delay": "" },
+        { "time": "07:30", "ride": "TD93820", "to": "", "platform": "", "status": "", "delay": 35 },
+        { "time": "07:53", "ride": "VA74109", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "08:45", "ride": "ZN52964", "to": "", "platform": "", "status": "", "delay": 10 },
+        { "time": "08:48", "ride": "YH81325", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "09:14", "ride": "RJ07493", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "09:32", "ride": "WK28640", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "09:46", "ride": "UM59381", "to": "", "platform": "", "status": "", "delay": 135 },
+        { "time": "10:27", "ride": "GC71029", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "10:35", "ride": "DR40258", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "10:38", "ride": "PX65907", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "10:40", "ride": "AF20438", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "11:08", "ride": "KI97305", "to": "", "platform": "", "status": "", "delay": 5 },
+        { "time": "11:27", "ride": "NL85127", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "11:43", "ride": "ZC13498", "to": "", "platform": "", "status": "", "delay": 25 },
+        { "time": "11:56", "ride": "XJ08254", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "12:24", "ride": "HV97530", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "12:45", "ride": "OB74156", "to": "", "platform": "", "status": "Cancelled", "delay": "" },
+        { "time": "13:30", "ride": "SW60394", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "14:20", "ride": "QE25081", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "14:35", "ride": "TF09163", "to": "", "platform": "", "status": "", "delay": 15 },
+        { "time": "14:39", "ride": "JG54329", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "15:48", "ride": "YM70684", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "15:55", "ride": "UC81970", "to": "", "platform": "", "status": "", "delay": 40 },
+        { "time": "16:00", "ride": "RX23418", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "16:35", "ride": "DP09752", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "17:25", "ride": "LW18360", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "17:55", "ride": "VG46201", "to": "", "platform": "", "status": "", "delay": 35 },
+        { "time": "18:20", "ride": "HN39852", "to": "", "platform": "", "status": "", "delay": 20 },
+        { "time": "18:22", "ride": "BO21693", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "18:59", "ride": "KC45708", "to": "", "platform": "", "status": "", "delay": 10 },
+        { "time": "19:15", "ride": "XZ90437", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "19:20", "ride": "EP73209", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "19:45", "ride": "MI28064", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "20:15", "ride": "DZ96124", "to": "", "platform": "", "status": "", "delay": 45 },
+        { "time": "20:45", "ride": "IN29892", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "21:30", "ride": "GO88724", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "21:35", "ride": "DE10948", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "22:00", "ride": "PA51229", "to": "", "platform": "", "status": "", "delay": "" },
+        { "time": "23:00", "ride": "PR29485", "to": "", "platform": "", "status": "", "delay": 5 },
+        { "time": "23:55", "ride": "NJ15843", "to": "", "platform": "", "status": "", "delay": "" }
+      ],
+      "arrivals": [
+        { "time": "00:15", "ride": "ZT06795", "from": "", "platform": "", "status": "", "delay": 180 },
+        { "time": "01:26", "ride": "QS83504", "from": "", "platform": "", "status": "Cancelled", "delay": "" },
+        { "time": "02:45", "ride": "LF43982", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "03:30", "ride": "RU09615", "from": "", "platform": "", "status": "", "delay": 250 },
+        { "time": "04:50", "ride": "YD28403", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "05:30", "ride": "WP61987", "from": "", "platform": "", "status": "Cancelled", "delay": "" },
+        { "time": "06:15", "ride": "TG38520", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "06:30", "ride": "HJ54192", "from": "", "platform": "", "status": "", "delay": 25 },
+        { "time": "06:45", "ride": "CM80243", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "07:20", "ride": "KV09371", "from": "", "platform": "", "status": "", "delay": 10 },
+        { "time": "07:35", "ride": "FQ59864", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "07:53", "ride": "NX46508", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "08:25", "ride": "ZS18420", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "08:40", "ride": "QJ93250", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "08:58", "ride": "AP45875", "from": "", "platform": "", "status": "", "delay": 25 },
+        { "time": "09:24", "ride": "LX54781", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "09:37", "ride": "BV62093", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "09:55", "ride": "MT03942", "from": "", "platform": "", "status": "", "delay": 15 },
+        { "time": "10:10", "ride": "DA19570", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "10:25", "ride": "UE78206", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "10:35", "ride": "GR06425", "from": "", "platform": "", "status": "", "delay": 50 },
+        { "time": "10:40", "ride": "PJ52917", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "11:00", "ride": "AF68309", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "11:20", "ride": "KI74085", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "11:30", "ride": "NL50826", "from": "", "platform": "", "status": "", "delay": 25 },
+        { "time": "12:00", "ride": "ZC29173", "from": "", "platform": "", "status": "", "delay": 10 },
+        { "time": "12:30", "ride": "XJ37502", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "12:45", "ride": "HV81936", "from": "", "platform": "", "status": "", "delay": 5 },
+        { "time": "13:40", "ride": "OB60497", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "14:20", "ride": "SW48162", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "14:30", "ride": "QE09713", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "14:45", "ride": "TF64208", "from": "", "platform": "", "status": "", "delay": 20 },
+        { "time": "15:35", "ride": "JG28097", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "15:50", "ride": "YM73504", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "16:00", "ride": "UC05691", "from": "", "platform": "", "status": "", "delay": 40 },
+        { "time": "16:30", "ride": "RX40285", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "17:20", "ride": "DP15827", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "17:45", "ride": "LW73906", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "18:00", "ride": "VG20841", "from": "", "platform": "", "status": "", "delay": 35 },
+        { "time": "18:25", "ride": "HN53680", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "18:39", "ride": "BO69412", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "19:00", "ride": "DZ98117", "from": "", "platform": "", "status": "", "delay": 60 },
+        { "time": "19:50", "ride": "GF74393", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "20:20", "ride": "NU67893", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "21:15", "ride": "IN29892", "from": "", "platform": "", "status": "", "delay": 45 },
+        { "time": "22:00", "ride": "RQ91827", "from": "", "platform": "", "status": "Cancelled", "delay": "" },
+        { "time": "23:00", "ride": "SD10839", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "23:25", "ride": "UJ45587", "from": "", "platform": "", "status": "", "delay": "" },
+        { "time": "23:45", "ride": "ZD96852", "from": "", "platform": "", "status": "", "delay": 5 }
+      ]
+    };
+
+    function assignRandomPlatforms(departures, arrivals, maxPlatform = 50, margin = 10) {
+      const toMinutes = (t) => {
+        let [h, m] = t.split(":").map(Number);
+        return h * 60 + m;
+      };
+
+      departures.forEach(dep => {
+        dep.platform = Math.floor(Math.random() * maxPlatform) + 1;
       });
-      $(".departures").click(function () {
-        $("#timetable2").hide();
-        $("#timetable").show();
+
+      arrivals.forEach(arr => {
+        let arrTime = toMinutes(arr.time);
+        let plat;
+
+        let attempts = 0;
+        do {
+          plat = Math.floor(Math.random() * maxPlatform) + 1;
+          let conflict = departures.some(dep => {
+            if (dep.status === "Cancelled") return false;
+            let depTime = toMinutes(dep.time);
+            return dep.platform == plat && Math.abs(depTime - arrTime) <= margin;
+          });
+          if (!conflict) break;
+          attempts++;
+        } while (attempts < 100);
+
+        arr.platform = plat;
+      });
+
+      return { departures, arrivals };
+    }
+
+    const destinations = ["Geonosis", "Mustafar", "Tambora City", "Oblimpon", "Sehz-Clar", "Caracall", "Munison", "Curimbuk", "Muursa", "Tolull", "Neo-Babylon", "Arraks-Dull", "Gondwana"];
+
+    function assignRandomDestinationsWithMargin(items, key = "to", margin = 60) {
+      const toMinutes = (t) => {
+        const [h, m] = t.split(":").map(Number);
+        return h * 60 + m;
+      };
+
+      const sorted = [...items].sort((a, b) => toMinutes(a.time) - toMinutes(b.time));
+
+      sorted.forEach((item, index) => {
+        if (!item[key]) {
+          let possible = [...destinations];
+
+          for (let i = 0; i < index; i++) {
+            const prev = sorted[i];
+            if (Math.abs(toMinutes(prev.time) - toMinutes(item.time)) <= margin) {
+              possible = possible.filter(d => d !== prev[key]);
+            }
+          }
+
+          if (possible.length === 0) possible = [...destinations];
+
+          const randomIndex = Math.floor(Math.random() * possible.length);
+          item[key] = possible[randomIndex];
+        }
+      });
+
+      return sorted;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const departuresTable = document.querySelector("#timetable table");
+      const arrivalsTable = document.querySelector("#timetable2 table");
+      console.log("DOM pronto");
+      console.log("Departures table:", departuresTable);
+      console.log("Arrivals table:", arrivalsTable);
+
+      assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
+
+      assignRandomDestinationsWithMargin(data.departures, "to", 60);
+
+      assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
+
+      function parseTime(timeTransform) {
+        const [h, m] = timeTransform.split(":").map(Number);
+        return h * 60 + m;
+      }
+
+      function minutesLeft(item) {
+        const now = new Date();
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+        const itemTime = parseTime(item.time);
+        const limit = itemTime + (item.delay || 0);
+        return limit - currentMinutes;
+      }
+
+      function minutesToDeparture(item) {
+        const now = new Date();
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+        const itemTime = parseTime(item.time);
+        return itemTime - currentMinutes;
+      }
+
+      function shouldBeVisible(item) {
+        const now = new Date();
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+        const itemTime = parseTime(item.time);
+
+        const appearTime = itemTime - 30;
+        const expireTime = itemTime + (item.delay || 0);
+
+        return currentMinutes >= appearTime && currentMinutes <= expireTime;
+      }
+
+      function selectSix(items, type) {
+        const now = new Date();
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+        let visible = items.filter(shouldBeVisible);
+
+        if (visible.length < 6) {
+          const future = items.filter(item => parseTime(item.time) > currentMinutes && !visible.includes(item));
+          visible = [...visible, ...future.slice(0, 6 - visible.length)];
+        }
+
+        return visible
+          .sort((a, b) => parseTime(a.time) - parseTime(b.time))
+          .slice(0, 6)
+          .map(item => {
+            if (type === "departures") {
+              if (item.status === "Cancelled") return item;
+
+              const scheduled = parseTime(item.time);
+              const effective = scheduled + (item.delay || 0);
+              const minsToDep = effective - currentMinutes;
+
+              if (item.delay && minsToDep > 20) {
+                return { ...item, status: "Delayed" };
+              } else if (minsToDep <= 20 && minsToDep > 5) {
+                return { ...item, status: "Boarding" };
+              } else if (minsToDep <= 5 && minsToDep >= 0) {
+                return { ...item, status: "Closed" };
+              }
+              return item;
+            }
+
+            else if (type === "arrivals") {
+              if (item.status === "Cancelled") return item;
+
+              const scheduled = parseTime(item.time);
+              const effective = scheduled + (item.delay || 0);
+              const mins = effective - currentMinutes;
+
+              if (mins > 5 && item.delay) {
+                return { ...item, status: "Delayed" };
+              } else if (mins <= 5 && mins > 0) {
+                return { ...item, status: "In transit" };
+              } else if (mins <= 0) {
+                return { ...item, status: "Arrived" };
+              }
+            }
+
+            return item;
+          });
+      }
+
+
+      function populateTable(table, items, type) {
+        table.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
+
+        items.forEach((row, i) => {
+          const tr = document.createElement("tr");
+          tr.className = i % 2 === 0 ? "timetable-odd" : "timetable-even";
+          const delayVal = row.delay !== undefined ? row.delay : 0;
+
+          const destination = type === "departures" ? row.to : row.from;
+
+          tr.innerHTML = `
+            <td>${row.time}</td>
+            <td>${row.ride}</td>
+            <td>${destination}</td>
+            <td>${row.platform}</td>
+            <td>${row.status}</td>
+            <td class="delay-cell">${delayVal}</td>
+          `;
+          table.appendChild(tr);
+        });
+      }
+
+      function loadOrGeneratePlatformsAndDestinations() {
+        // Controllo se ho già salvato in localStorage
+        const saved = localStorage.getItem("timetable Platforms and Destinations");
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          data.departures = parsed.departures;
+          data.arrivals = parsed.arrivals;
+          return;
+        }
+
+        assignRandomPlatforms(data.departures, data.arrivals, 50, 10);
+        assignRandomDestinationsWithMargin(data.departures, "to", 60);
+        assignRandomDestinationsWithMargin(data.arrivals, "from", 60);
+
+        localStorage.setItem(
+          "timetable Platforms and Destinations",
+          JSON.stringify({ departures: data.departures, arrivals: data.arrivals })
+        );
+      }
+
+      loadOrGeneratePlatformsAndDestinations();
+
+      function refreshTables() {
+        const departures = selectSix(data.departures, "departures");
+        const arrivals = selectSix(data.arrivals, "arrivals");
+
+        populateTable(departuresTable, departures, "departures");
+        populateTable(arrivalsTable, arrivals, "arrivals");
+      }
+
+      refreshTables();
+      setInterval(refreshTables, 30000);
+
+      document.querySelectorAll('.btn-arrivals').forEach(btn => {
+        btn.addEventListener('click', () => showSection('timetable2'));
+      });
+      document.querySelectorAll('.btn-departures').forEach(btn => {
+        btn.addEventListener('click', () => showSection('timetable'));
       });
     });
-  </script> -->
+
+    function showSection(id) {
+      document.querySelectorAll('.main-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+  </script>
 
 </head>
 
@@ -76,7 +400,8 @@
       <section class="main-section active" id="timetable">
         <div class="titolo-bottone-timetable">
           <h2 class="timetable">Departures</h2>
-          <div class="arrivals"><button class="button-page timetable button-beveled">Arrivals</button></div>
+          <div class="btn-arrivals arrivals"><button class="button-page timetable button-beveled">Arrivals</button>
+          </div>
         </div>
         <div class="tabella-timetable">
           <table>
@@ -86,55 +411,14 @@
               <th>to</th>
               <th>platform</th>
               <th>status</th>
-            </tr>
-            <tr class="timetable-odd">
-              <td>20:15</td>
-              <td>DZ96124</td>
-              <td>Geonosis</td>
-              <td>13</td>
-              <td>Delayed</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>20:45</td>
-              <td>IN29892</td>
-              <td>Mustafar</td>
-              <td>14</td>
-              <td>Closed</td>
-            </tr>
-            <tr class="timetable-odd">
-              <td>21:30</td>
-              <td>GO88724</td>
-              <td>Tambora City</td>
-              <td>23</td>
-              <td>Boarding</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>21:35</td>
-              <td>DE10948</td>
-              <td>Oblimpon</td>
-              <td>5</td>
-              <td>Closed</td>
-            </tr>
-            <tr class="timetable-odd">
-              <td>22:00</td>
-              <td>PA51229</td>
-              <td>Sehz-Clar</td>
-              <td>12</td>
-              <td>Boarding</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>23:00</td>
-              <td>PR29485</td>
-              <td>Caracall</td>
-              <td>3</td>
-              <td>Delayed</td>
+              <th>delay</th>
             </tr>
           </table>
         </div>
       </section>
       <section class="main-section" id="timetable2">
         <div class="titolo-bottone-timetable">
-          <div class="departures"><button class="timetable button-beveled">Departures</button></div>
+          <div class="btn-departures departures"><button class="timetable button-beveled">Departures</button></div>
           <h2 class="timetable">Arrivals</h2>
         </div>
         <div class="tabella-timetable">
@@ -142,51 +426,10 @@
             <tr>
               <th>time</th>
               <th>ride</th>
-              <th>to</th>
+              <th>from</th>
               <th>platform</th>
               <th>status</th>
-            </tr>
-            <tr class="timetable-odd">
-              <td>19:00</td>
-              <td>DZ98117</td>
-              <td>Geonosis</td>
-              <td>13</td>
-              <td>Delayed</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>19:50</td>
-              <td>GF74393</td>
-              <td>Munison</td>
-              <td>21</td>
-              <td>Arrived</td>
-            </tr>
-            <tr class="timetable-odd">
-              <td>20:20</td>
-              <td>NU67893</td>
-              <td>Curimbuk</td>
-              <td>9</td>
-              <td>In transit</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>21:15</td>
-              <td>IN29892</td>
-              <td>Muursa</td>
-              <td>28</td>
-              <td>Delayed</td>
-            </tr>
-            <tr class="timetable-odd">
-              <td>22:00</td>
-              <td>RQ91827</td>
-              <td>Guanerma</td>
-              <td>42</td>
-              <td>Cancelled</td>
-            </tr>
-            <tr class="timetable-even">
-              <td>23:00</td>
-              <td>SD10839</td>
-              <td>Tolull</td>
-              <td>1</td>
-              <td>In transit</td>
+              <th>delay</th>
             </tr>
           </table>
         </div>

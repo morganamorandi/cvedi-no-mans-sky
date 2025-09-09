@@ -84,7 +84,7 @@
 
   <main>
     <div class="container">
-      <section class="main-section active" id="faqs">
+      <section class="main-section faq-section active" id="faqs">
         <div class="titolo-bottone-services">
           <h2 class="faqs">Services and assistance</h2>
           <div class="faqs2">
@@ -190,31 +190,34 @@
             </ul>
           </div>
         </div>
-        <div class="assistance footer-gradient taller">
+        <div class="assistance">
           <button class="button-assistance button-yellow">Call Assistance</button>
         </div>
 
       </section>
-      <section class="main-section" id="faqs2">
+      <section class="main-section faq-section" id="faqs2">
         <div class="titolo-bottone-faqs">
           <div class="services"><button class="button-page faqs button-beveled">Services and assistance</button></div>
           <h2 class="faqs">Frequently Asked Questions</h2>
         </div>
         <div class="container-accordion">
-          <button class="accordion"> In the event of strike how can I know if my train is confirmed?</button>
+          <button class="accordion">In the event of strike how can I know if my train is confirmed?</button>
           <div class="panel">
             <p>During a strike, you can verify if your train is confirmed in the Departures & Arrivals Info section that
               you can find in the sidebar.<br>
               The hub guarantees two time slots from 6:00 to 9:00am and from 6:00 to 9:00
               pm NST.<br>
-              If you decide to not travel due to a strike, you’ll have a right to claim compensation for you ticket
+              If you decide to not travel due to a strike, you'll have a right to claim compensation for your tickets
               without any deductions.
             </p>
           </div>
 
           <button class="accordion">Are there any loyalty programs or special memberships available?</button>
           <div class="panel">
-            <p></p>
+            <p>Yes, Nexus offers a loyalty program designed to reward our regular customers. Members enjoy exclusive
+              benefits such as discounts, re and special offers. You can sign up at Nexus' Info Point, on our website,
+              <b>nexus/loyalty-program.galaxy</b>, or on our app, <b>Nexus Hub</b>. Signing up is simple and free,
+              and you can start earning points and rewards immediately.</p>
           </div>
 
           <button class="accordion">What should I do if my interdimensional ID is not recognized?</button>
@@ -228,7 +231,7 @@
           <button class="accordion">Can I travel with my pet?</button>
           <div class="panel">
             <p>Small dogs, cats and other pets (provided they are inside a pet carrier that does not exceed 70 x 30 x 50
-              cm in size) can travel free of charge in First and Second class, on all train categories, and in
+              cm in size) can travel free of charge in First and Second class, on all train categories, and in
               Executive, Business, Premium and Standard service levels.
               Only one pet carrier permitted per passenger.</p>
           </div>
@@ -237,11 +240,11 @@
           <button class="button-assistance button-yellow">Call Assistance</button>
         </div>
       </section>
-      <section class="main-section" id="faqs3">
-        <div>
+      <section class="main-section faq-section" id="faqs3">
+        <div class="assistance-text">
           <h2>Hai chiamato l'assistenza</h2>
+          <p>Saremo da te tra pochissimo!</p>
         </div>
-        <p>Saremo da te tra pochissimo!</p>
       </section>
     </div>
   </main>
@@ -251,7 +254,7 @@
 
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function () {
-        this.classList.toggle("active-accordion");
+        //this.classList.toggle("active-accordion");
         var panel = this.nextElementSibling;
         // Chiudi tutti gli altri
         for (let j = 0; j < acc.length; j++) {
@@ -273,6 +276,18 @@
         }
       });
     }
+
+    function showSection(id) {
+      document.querySelectorAll('.main-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.querySelector('.services').addEventListener('click', () => showSection('faqs'));
+    document.querySelector('.faqs2').addEventListener('click', () => showSection('faqs2'));
+    document.querySelector('.assistance').addEventListener('click', () => showSection('faqs3'));
+
   </script>
 </body>
 
