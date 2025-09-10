@@ -132,6 +132,8 @@
       ]
     };
 
+    const destinations = ["Geonosis", "Mustafar", "Tambora City", "Oblimpon", "Sehz-Clar", "Caracall", "Munison", "Curimbuk", "Muursa", "Tolull", "Neo-Babylon", "Arraks-Dull", "Gondwana"];
+
     function assignRandomPlatforms(departures, arrivals, maxPlatform = 50, margin = 10) {
       const toMinutes = (t) => {
         let [h, m] = t.split(":").map(Number);
@@ -163,8 +165,6 @@
 
       return { departures, arrivals };
     }
-
-    const destinations = ["Geonosis", "Mustafar", "Tambora City", "Oblimpon", "Sehz-Clar", "Caracall", "Munison", "Curimbuk", "Muursa", "Tolull", "Neo-Babylon", "Arraks-Dull", "Gondwana"];
 
     function assignRandomDestinationsWithMargin(items, key = "to", margin = 60) {
       const toMinutes = (t) => {
@@ -228,13 +228,17 @@
         return itemTime - currentMinutes;
       }
 
-      function shouldBeVisible(item) {
+      function shouldBeVisible(item, type) {
         const now = new Date();
         const currentMinutes = now.getHours() * 60 + now.getMinutes();
         const itemTime = parseTime(item.time);
 
         const appearTime = itemTime - 30;
         const expireTime = itemTime + (item.delay || 0);
+
+        if (type === "arrivals") {
+          return currentMinutes >= appearTime && currentMinutes <= expireTime + 5;
+        }
 
         return currentMinutes >= appearTime && currentMinutes <= expireTime;
       }
@@ -243,7 +247,7 @@
         const now = new Date();
         const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-        let visible = items.filter(shouldBeVisible);
+        let visible = items.filter(item => shouldBeVisible(item, type));
 
         if (visible.length < 6) {
           const future = items.filter(item => parseTime(item.time) > currentMinutes && !visible.includes(item));
@@ -291,7 +295,6 @@
           });
       }
 
-
       function populateTable(table, items, type) {
         table.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
 
@@ -315,7 +318,6 @@
       }
 
       function loadOrGeneratePlatformsAndDestinations() {
-        // Controllo se ho già salvato in localStorage
         const saved = localStorage.getItem("timetable Platforms and Destinations");
         if (saved) {
           const parsed = JSON.parse(saved);
@@ -405,14 +407,17 @@
         </div>
         <div class="table-timetable">
           <table>
-            <tr>
-              <th>time</th>
-              <th>ride</th>
-              <th>to</th>
-              <th>platform</th>
-              <th>status</th>
-              <th>delay</th>
-            </tr>
+            <!-- <thead> -->
+              <tr>
+                <th>time</th>
+                <th>ride</th>
+                <th>to</th>
+                <th>platform</th>
+                <th>status</th>
+                <th>delay</th>
+              </tr>
+            <!-- </thead> -->
+            <!-- <tbody></tbody> -->
           </table>
         </div>
       </section>
