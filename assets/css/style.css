@@ -362,8 +362,8 @@ label.labelsmall {
 /*-----------------------------------*\
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
-.prompts{
- position: absolute;
+.prompts {
+  position: absolute;
 }
 
 .sb-prompt-1 {
@@ -1003,7 +1003,53 @@ label.labelsmall {
   text-align: center;
 }
 
+.ticket-box {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  aspect-ratio: 1559 / 698;
+  background-image: url("../images/ticket_check_in.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+.ticket-title {
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--misc-off-white);
+  font-size: var(--fontSize-5);
+  font-weight: var(--weight-bold);
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+
+}
+
+.ticket-left,
+.ticket-right {
+  position: absolute;
+  background: transparent;
+  top: 0;
+  bottom: 0;
+}
+
+.ticket-left {
+  left: 5%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.ticket-right {
+  right: 5%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /*-----------------------------------*\
   #FAQS
@@ -1019,8 +1065,8 @@ label.labelsmall {
   display: flex;
 }
 
-.faq-section .titolo-bottone-services,
-.titolo-bottone-faqs {
+.faq-section .button-title-services,
+.button-title-faqs {
   position: sticky;
   flex-shrink: 0;
   display: flex;
@@ -1031,7 +1077,7 @@ label.labelsmall {
 .faq-section .container-accordion {
   flex: 1 1 auto;
   overflow-y: auto;
-   max-height: calc(90vh - 80px - 60px);
+  max-height: calc(90vh - 80px - 60px);
   padding: 10px;
 }
 
@@ -1116,7 +1162,7 @@ label.labelsmall {
   #TIMETABLE
 \*-----------------------------------*/
 
-.titolo-bottone-timetable {
+.button-title-timetable {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1128,7 +1174,7 @@ label.labelsmall {
   display: inline-block;
 }
 
-.tabella-timetable {
+.table-timetable {
   display: flex;
   justify-content: center;
   height: 70vh;
@@ -1236,7 +1282,7 @@ th {
   padding-left: 20px;
   flex: 0 0 42%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   box-sizing: border-box;
 }
