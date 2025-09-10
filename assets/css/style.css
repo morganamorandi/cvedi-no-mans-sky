@@ -224,6 +224,62 @@ h3 {
   color: var(--misc-teal);
 }
 
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  box-sizing: border-box;
+
+  color: var(--misc-off-white);
+  background-color: var(--misc-teal-alpha-15);
+  font-family: var(--fontFamily-chakra);
+  font-size: var(--fontSize-6);
+  border: 2px solid var(--misc-teal);
+  border-radius: 0;
+  margin-top: 10px;
+  padding: 15px;
+
+  height: 55px;
+  line-height: 1.2;
+}
+
+select::picker(select)::-webkit-scrollbar {
+  display: none;
+}
+
+
+select:focus {
+  border: 2px solid var(--misc-off-white);
+  box-shadow: 0 0 7px white;
+  outline: none;
+}
+
+select::picker-icon {
+  color: var(--misc-teal);
+  transition: 0.4s rotate;
+}
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+  border: none;
+}
+
+option {
+  background-color: var(--misc-light-petrol);
+  color: var(--misc-off-white);
+  padding: 5px;
+  font-size: var(--fontSize-7);
+  border: solid 1px var(--misc-teal);
+}
+
+/*option:nth-of-type(odd) {
+  background: #153C3C;
+}*/
+
 label {
   font-family: var(--fontFamily-orbitron);
   font-weight: var(--weight-semiBold);
@@ -1105,10 +1161,92 @@ label.labelsmall {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
   align-items: center;
   width: 100%;
+  height: 100vh;
   box-sizing: border-box;
+}
+
+.c1-payment-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  /* Prevent horizontal expansion */
+  border: 1px solid var(--misc-teal);
+  padding: 25px;
+  gap: 16px;
+  box-sizing: border-box;
+  /* Include padding in width */
+}
+.c1-payment-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.c1-payment-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.c1-payment-item.short{
+  flex: 0.3;
+}
+
+.textfield.c1-payment-field {
+  box-sizing: border-box;
+  color: var(--misc-off-white);
+  background-color: var(--misc-teal-alpha-15);
+  font-family: var(--fontFamily-chakra);
+  font-size: var(--fontSize-6);
+  border: 2px solid var(--misc-teal);
+  border-radius: 0;
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  height: 55px;
+  line-height: 1.2;
+
+}
+
+.c1-payment-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-width: 100%;
+  padding-bottom: 30px;
+  margin-bottom: 200px;
+}
+
+.payment-options-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.payment-option {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--misc-teal);
+  padding: 25px 40px;
+  gap: 16px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-option-radio {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
 }
 
 /*-----------------------------------*\

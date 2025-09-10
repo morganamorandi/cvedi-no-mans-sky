@@ -311,8 +311,8 @@
                   <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name1" placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
-                  <label for="family-name1">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name1" placeholder="Family Name">
+                  <label for="last-name1">Last Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name1" placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -324,8 +324,8 @@
                   <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name2" placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
-                  <label for="family-name2">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name2" placeholder="Family Name">
+                  <label for="last-name2">Last Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name2" placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -337,8 +337,8 @@
                   <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name3" placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
-                  <label for="family-name3">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name3" placeholder="Family Name">
+                  <label for="last-name3">Last Name</label>
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name3" placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -352,7 +352,7 @@
 
 
       <!--region LUGGAGE SECTION-->
-      <section class="main-section active c1-pg-4">
+      <section class="main-section c1-pg-4">
         <div class="c1-luggage">
           <div class="title-header">
             <div class="title-header-flex">
@@ -675,7 +675,7 @@
 
 
       <!--region PAYMENT SECTION-->
-      <section class="main-section c1-pg-7">
+      <section class="main-section active c1-pg-7">
         <div class="c1-payment">
           <div class="title-header">
             <div class="title-header-flex">
@@ -713,7 +713,72 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="c1-payment-list">
             <h2>Payment details</h2>
+            <div class="c1-payment-details">
+              <div class="c1-payment-fields">
+                <div class="c1-payment-item">
+                  <label for="first-name4">First Name</label>
+                  <input class="textfield c1-payment-field" type="text" id="first-name4" placeholder="First Name"/>
+                </div>
+                <div class="c1-payment-item">
+                  <label for="last-name4">Last Name</label>
+                  <input class="textfield c1-payment-field" type="text" id="last-name4" placeholder="Last Name"/>
+                </div>
+              </div>
+              <div class="c1-payment-fields">
+                <div class="c1-payment-item">
+                  <label for="address">Address</label>
+                  <input class="textfield c1-payment-field" type="text" id="address" placeholder="Address"/>
+                </div>
+                <div class="c1-payment-item short">
+                  <label for="dropdown">Dimension</label>
+                  <select name="Dimension" id="dropdown">
+                    <option style="display:none" disabled selected value>Dimension</option>
+                    <option value="Arraks-Dull">Arraks-Dull</option>
+                    <option value="Caracall">Caracall</option>
+                    <option value="Curimbuk">Curimbuk</option>
+                    <option value="Geonosis">Geonosis</option>
+                    <option value="Gondwana">Gondwana</option>
+                    <option value="Munison">Munison</option>
+                    <option value="Mustafar">Mustafar</option>
+                    <option value="Muursa">Muursa</option>
+                    <option value="Neo-Babylon">Neo-Babylon</option>
+                    <option value="Oblimpon">Oblimpon</option>
+                    <option value="Sehz-Clar">Sehz-Clar</option>
+                    <option value="Tambora City">Tambora City</option>
+                    <option value="Tolull">Tolull</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="c1-payment-options">
+              <h2>Payment options</h2>
+              <div class="payment-options-box">
+                <div class="radio payment-option">
+                  <div class="payment-option-radio">
+                    <input class="radio-option payment" type="radio" id="paymentopt1" name="ridetype">
+                    <label class="label" for="paymentopt1">Credit Card</label>
+                  </div>
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_card.svg" height="28px"/>
+                </div>
+                <div class="radio payment-option">
+                  <div class="payment-option-radio">
+                    <input class="radio-option payment" type="radio" id="paymentopt2" name="ridetype" checked>
+                    <label class="label" for="paymentopt2">Chronocurrency</label>
+                  </div>
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_chronocurrency.svg" height="36px"/>
+                </div>
+                <div class="radio payment-option">
+                  <div class="payment-option-radio">
+                    <input class="radio-option payment" type="radio" id="paymentopt3" name="ridetype" checked>
+                    <label class="label" for="paymentopt3">LapYap</label>
+                  </div>
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_lapyap.svg" height="36px"/>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <footer class="footer-gradient taller">
