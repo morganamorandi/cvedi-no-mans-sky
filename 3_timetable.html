@@ -296,7 +296,8 @@
       }
 
       function populateTable(table, items, type) {
-        table.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
+        const tbody = table.querySelector("tbody");
+        tbody.querySelectorAll("tr").forEach(tr => tr.remove());
 
         items.forEach((row, i) => {
           const tr = document.createElement("tr");
@@ -313,7 +314,7 @@
             <td>${row.status}</td>
             <td class="delay-cell">${delayVal}</td>
           `;
-          table.appendChild(tr);
+          tbody.appendChild(tr);
         });
       }
 
@@ -407,7 +408,7 @@
         </div>
         <div class="table-timetable">
           <table>
-            <!-- <thead> -->
+            <thead>
               <tr>
                 <th>time</th>
                 <th>ride</th>
@@ -416,8 +417,8 @@
                 <th>status</th>
                 <th>delay</th>
               </tr>
-            <!-- </thead> -->
-            <!-- <tbody></tbody> -->
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
       </section>
@@ -428,14 +429,17 @@
         </div>
         <div class="table-timetable">
           <table>
-            <tr>
-              <th>time</th>
-              <th>ride</th>
-              <th>from</th>
-              <th>platform</th>
-              <th>status</th>
-              <th>delay</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>time</th>
+                <th>ride</th>
+                <th>from</th>
+                <th>platform</th>
+                <th>status</th>
+                <th>delay</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
       </section>
