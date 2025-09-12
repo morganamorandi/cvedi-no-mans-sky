@@ -16,8 +16,10 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
- 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+
   <!--
     - css link
   -->
@@ -26,27 +28,26 @@
   <!--
     - jquery
   -->
-  <script src="https://code.jquery.com/jquery-3.7.1.js" 
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <script src="./assets/js/script.js"></script>
 
   <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
       $("#language").hide();
       $("#home").hide();
       $(".prompts").hide();
-      
-      $(".standby").click(function(){
+
+      $(".standby").click(function () {
         $("#sb").hide();
         $("#language").show();
       });
 
-      $(".center").click(function(){
+      $(".center").click(function () {
         $(".prompts").show();
       });
 
-      $(".sb-button").click(function(){
+      $(".sb-button").click(function () {
         $("#language").hide();
         $("#home").show();
       });
@@ -55,7 +56,7 @@
 
 </head>
 
-<body>  
+<body>
   <div class="sb-container">
     <section class="standby" id="sb">
       <h1 class="h1">Welcome to <br> Nexus Multiversal Crossroads</h1>
@@ -65,56 +66,56 @@
 
     <section class="language-selection" id="language">
       <h3 class="sb-section-title">please select your dimension</h3>
-        
+
       <div class="system">
         <div class="center">
           <div class="orbit1">
-          <div class="dimension"></div>
-        </div>
-        <div class="orbit2">
-          <div class="dimension"></div>
-        </div>
-        <div class="orbit3">
-          <div class="dimension"></div>
-        </div>
-        <div class="orbit4">
-          <div class="dimension"></div>
-        </div>
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit2">
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit3">
+            <div class="dimension"></div>
+          </div>
+          <div class="orbit4">
+            <div class="dimension"></div>
+          </div>
         </div>
       </div>
-      
+
 
       <div class="prompts">
         <div class="sb-prompt-1">
-          <img src="./assets/images/prompt_panel.png" width="300">
+          <img src="./assets/images/prompt_panel.png" alt="Neo-Babylon" width="300">
           <p class="sb-text-1">DIMENSION</p>
           <p class="sb-text-2">Neo-Babylon</p>
           <div class="sb-button">select</div>
         </div>
 
         <div class="sb-prompt-2">
-          <img src="./assets/images/prompt_panel.png" width="300">
+          <img src="./assets/images/prompt_panel.png" alt="Gondwana" width="300">
           <p class="sb-text-1">DIMENSION</p>
           <p class="sb-text-2">Gondwana</p>
           <div class="sb-button">select</div>
         </div>
 
         <div class="sb-prompt-3">
-          <img src="./assets/images/prompt_panel.png" width="300">
+          <img src="./assets/images/prompt_panel.png" alt="Tambora City" width="300">
           <p class="sb-text-1">DIMENSION</p>
           <p class="sb-text-2">Tambora City</p>
           <div class="sb-button">select</div>
         </div>
 
         <div class="sb-prompt-4">
-          <img src="./assets/images/prompt_panel.png" width="300">
+          <img src="./assets/images/prompt_panel.png" alt="Terrah" width="300">
           <p class="sb-text-1">DIMENSION</p>
           <p class="sb-text-2">Terrah</p>
           <div class="sb-button">select</div>
         </div>
-        
+
       </div>
-    
+
     </section>
 
     <section class="home" id="home">
@@ -124,7 +125,7 @@
           <a href="1_tickets.html">
             <img src="./assets/images/icons/section_tickets.svg" alt="tickets icon" width="110" class="tickets-icon">
             <div class="d-button">
-              <img src="./assets/images/directory_button.png" width="130">
+<!--               <img src="./assets/images/directory_button.png"  width="130"> -->
               <div class="d-button-text">tickets</div>
             </div>
           </a>
@@ -133,7 +134,7 @@
           <a href="2_checkin.html">
             <img src="./assets/images/icons/section_checkin.svg" alt="checkin icon" width="110" class="checkin-icon">
             <div class="d-button">
-              <img src="./assets/images/directory_button.png" width="130">
+<!--               <img src="./assets/images/directory_button.png" width="130"> -->
               <div class="d-button-text">check-in</div>
             </div>
           </a>
@@ -142,7 +143,7 @@
           <a href="3_timetable.html">
             <img src="./assets/images/icons/section_rides.svg" alt="timetable icon" width="120" class="timetable-icon">
             <div class="d-button">
-              <img src="./assets/images/directory_button.png" width="130">
+<!--               <img src="./assets/images/directory_button.png" width="130"> -->
               <div class="d-button-text">timetable</div>
             </div>
           </a>
@@ -151,7 +152,7 @@
           <a href="4_faqs.html">
             <img src="./assets/images/icons/section_assistance.svg" alt="faqs icon" width="100" class="assistance-icon">
             <div class="d-button">
-              <img src="./assets/images/directory_button.png" width="130">
+<!--               <img src="./assets/images/directory_button.png" width="130"> -->
               <div class="d-button-text">assistance</div>
             </div>
           </a>
@@ -160,7 +161,7 @@
           <a href="5_map.html">
             <img src="./assets/images/icons/section_map.svg" alt="map icon" width="100" class="map-icon">
             <div class="d-button">
-              <img src="./assets/images/directory_button.png" width="130">
+<!--               <img src="./assets/images/directory_button.png" width="130"> -->
               <div class="d-button-text">map</div>
             </div>
           </a>
@@ -169,18 +170,21 @@
     </section>
 
   </div>
+
+  <footer class="footer">
+    <div class="news">
+      <div class="scrolling-text">
+        <div class="scrolling-text-item">Your First Announcement</div>
+        <div class="scrolling-text-item">Your Second Announcement</div>
+        <div class="scrolling-text-item">Your First Announcement</div>
+        <div class="scrolling-text-item">Your Second Announcement</div>
+        <div class="scrolling-text-item">Your First Announcement</div>
+        <div class="scrolling-text-item">Your Second Announcement</div>
+        <!-- Add More Items Here -->
+      </div>
+    </div>
+  </footer>
+
 </body>
-<footer class="footer">
-  <div class="news">
-    <div class="scrolling-text">
-      <div class="scrolling-text-item">Your First Announcement</div>
-      <div class="scrolling-text-item">Your Second Announcement</div>
-      <div class="scrolling-text-item">Your First Announcement</div>
-      <div class="scrolling-text-item">Your Second Announcement</div>
-      <div class="scrolling-text-item">Your First Announcement</div>
-      <div class="scrolling-text-item">Your Second Announcement</div>
-      <!-- Add More Items Here -->
-  </div>
-</div>
-</footer>
+
 </html>

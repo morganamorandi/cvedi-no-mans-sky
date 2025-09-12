@@ -1664,7 +1664,7 @@ label.labelsmall {
 }
 
 .accordion:after {
-  content: '\2228';
+  content: './assets/images/icons/arrow_dropdown.svg';
   color: var(--misc-teal);
   font-weight: bold;
   float: right;
