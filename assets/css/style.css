@@ -1633,7 +1633,7 @@ label.labelsmall {
   padding: 10px;
 }
 
-.faq-section .assistance {
+.faq-section .active-assistance {
   flex-shrink: 0;
   padding: 10px;
   display: flex;
@@ -1700,7 +1700,6 @@ label.labelsmall {
 }
 
 #faqs3 {
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;

@@ -14,8 +14,10 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+    rel="stylesheet">
+
   <!--
     - css link
   -->
@@ -26,34 +28,55 @@
 </head>
 
 <body>
-  <nav class="navbar active">
+  <nav class="navbar">
+    <div class="nav-toggle-btn">
+      <img src="./assets/images/icons/sidebar_toggle.svg" alt="nav toggle" width="60">
+    </div>
     <ul class="navbar-list">
       <li class="navbar-item">
-        <a href="#tickets" class="navbar-link">buy your tickets</a>
+        <a href="1_tickets.html" class="navbar-link">
+          <img src="./assets/images/icons/section_tickets.svg" alt="tickets icon" width="70">
+          <span class="nav-link-name">buy your tickets</span>
+        </a>
       </li>
 
       <li class="navbar-item">
-        <a href="2_checkin.html" class="navbar-link">check-in</a>
+        <a href="2_checkin.html" class="navbar-link">
+          <img src="./assets/images/icons/section_checkin.svg" alt="checkin icon" width="70">
+          <span class="nav-link-name">check-in</span>
+        </a>
       </li>
 
       <li class="navbar-item">
-        <a href="3_timetable.html" class="navbar-link">timetable</a>
+        <a href="3_timetable.html" class="navbar-link">
+          <img src="./assets/images/icons/section_rides.svg" alt="timetable icon" width="70">
+          <span class="nav-link-name">rides timetable</span>
+        </a>
       </li>
 
       <li class="navbar-item">
-        <a href="4_faqs.html" class="navbar-link">assistance & FAQs</a>
+        <a href="4_faqs.html" class="navbar-link">
+          <img src="./assets/images/icons/section_assistance.svg" alt="assistance icon" width="60">
+          <span class="nav-link-name">faqs & assistance</span>
+        </a>
       </li>
 
       <li class="navbar-item">
-        <a href="5_map.html" class="navbar-link">map</a>
+        <a href="5_map.html" class="navbar-link">
+          <img src="./assets/images/icons/section_map.svg" alt="map icon" width="60">
+          <span class="nav-link-name">map</span>
+        </a>
       </li>
 
-      <li class="navbar-item">
-        <a href="index.html#home" class="navbar-link">log out</a>
+      <li class="navbar-item logout">
+        <a href="index.html#home" class="navbar-link">
+          <img src="./assets/images/icons/sidebar_gohome.svg" alt="log out icon" width="60">
+          <span class="nav-link-name">exit</span>
+        </a>
       </li>
     </ul>
   </nav>
-  <main> 
+  <main>
     <div class="container" id="tickets">
 
 
@@ -64,27 +87,32 @@
           <div class="c1-search-row">
             <div class="c1-search-item grow">
               <label for="from">From</label><br>
-              <input class="textfield c1-search-field" autocomplete="off" type="text" id="from" placeholder="Departure station"><br>
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="from"
+                placeholder="Departure station"><br>
             </div>
             <div class="c1-search-item grow">
               <label for="to">To</label><br>
-              <input class="textfield c1-search-field" autocomplete="off" type="text" id="to" placeholder="Arrival station">
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="to"
+                placeholder="Arrival station">
             </div>
           </div>
           <div class="c1-search-row">
             <div class="c1-search-item grow">
               <label for="departure">Departure</label><br>
-              <input class="textfield c1-search-field" autocomplete="off" type="text" id="departure" placeholder="Departure date"><br>
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="departure"
+                placeholder="Departure date"><br>
             </div>
             <div class="c1-search-item grow">
               <label for="arrival">Arrival</label><br>
-              <input class="textfield c1-search-field" autocomplete="off" type="text" id="arrival" placeholder="Arrival date">
+              <input class="textfield c1-search-field" autocomplete="off" type="text" id="arrival"
+                placeholder="Arrival date">
             </div>
             <div class="c1-search-item short">
               <label for="passengers">Passengers</label><br>
               <div class="counter">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" id="passengers" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" id="passengers" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
@@ -100,7 +128,8 @@
             </div>
           </div>
           <div class="c1-search-row">
-            <button class="button-beveled c1-button-beveled" id="submit" onclick="navigateToNextSection()">Search Rides</button>
+            <button class="button-beveled c1-button-beveled" id="submit" onclick="navigateToNextSection()">Search
+              Rides</button>
           </div>
         </div>
       </section>
@@ -308,11 +337,13 @@
               <div class="name-fields">
                 <div class="c1-passenger-item">
                   <label for="first-name1">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name1" placeholder="First Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name1"
+                    placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
                   <label for="family-name1">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name1" placeholder="Family Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name1"
+                    placeholder="Family Name">
                 </div>
               </div>
             </div>
@@ -321,11 +352,13 @@
               <div class="name-fields">
                 <div class="c1-passenger-item">
                   <label for="first-name2">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name2" placeholder="First Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name2"
+                    placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
                   <label for="family-name2">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name2" placeholder="Family Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name2"
+                    placeholder="Family Name">
                 </div>
               </div>
             </div>
@@ -334,11 +367,13 @@
               <div class="name-fields">
                 <div class="c1-passenger-item">
                   <label for="first-name3">First Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name3" placeholder="First Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="first-name3"
+                    placeholder="First Name">
                 </div>
                 <div class="c1-passenger-item">
                   <label for="family-name3">Family Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name3" placeholder="Family Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="family-name3"
+                    placeholder="Family Name">
                 </div>
               </div>
             </div>
@@ -397,7 +432,7 @@
               <div class="optionbox">
                 <div class="optiontitle">Personal item</div>
                 <div class="optiondetails luggage">
-                  <img src="assets/images/icons/luggage_opt_personalitem.svg" height="100px"/>
+                  <img src="assets/images/icons/luggage_opt_personalitem.svg" height="100px" />
                   <div class="optiontext">
                     <div class="optionsize">40x20x25</div>
                     <div class="optioninfo">Must fit under seat in front of you</div>
@@ -406,7 +441,8 @@
               </div>
               <div class="counter luggage">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
@@ -414,7 +450,7 @@
               <div class="optionbox">
                 <div class="optiontitle">Carry-on</div>
                 <div class="optiondetails luggage">
-                  <img src="assets/images/icons/luggage_opt_carryon.svg" height="100px"/>
+                  <img src="assets/images/icons/luggage_opt_carryon.svg" height="100px" />
                   <div class="optiontext">
                     <div class="optionsize">55x40x20</div>
                     <div class="optioninfo">Must be stored in the overhead locker</div>
@@ -423,7 +459,8 @@
               </div>
               <div class="counter luggage">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
@@ -431,7 +468,7 @@
               <div class="optionbox">
                 <div class="optiontitle">Checked Luggage</div>
                 <div class="optiondetails luggage">
-                  <img src="assets/images/icons/luggage_opt_checkedin.svg" width="100px"/>
+                  <img src="assets/images/icons/luggage_opt_checkedin.svg" width="100px" />
                   <div class="optiontext">
                     <div class="optionsize">80x120x120</div>
                     <div class="optioninfo">Must be checked in. Max weight 10 qM<sub>☉</sub></div>
@@ -440,14 +477,16 @@
               </div>
               <div class="counter luggage">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
           </div>
         </div>
         <footer class="footer-gradient taller">
-          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to select assistance</button>
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to select
+            assistance</button>
         </footer>
       </section>
       <!--endregion-->
@@ -502,23 +541,23 @@
               </div>
               <div class="c1-assistance-options">
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
@@ -531,23 +570,23 @@
               </div>
               <div class="c1-assistance-options">
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
@@ -560,23 +599,23 @@
               </div>
               <div class="c1-assistance-options">
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_wheelchair.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_sight.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
                 <div class="c1-option assistance">
-                  <input type="checkbox" class="checkbox"/>
+                  <input type="checkbox" class="checkbox" />
                   <div class="optiondetails assistance">
-                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px"/>
+                    <img src="assets/images/icons/disability_opt_hearing.svg" height="36px" />
                     <div class="optiontext">Wheelchair user</div>
                   </div>
                 </div>
@@ -585,7 +624,8 @@
           </div>
         </div>
         <footer class="footer-gradient taller">
-          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to animal companions</button>
+          <button class="button-beveled footer-button" onclick="navigateToNextSection()">Go to animal
+            companions</button>
         </footer>
       </section>
       <!--endregion-->
@@ -637,7 +677,7 @@
               <div class="optionbox">
                 <div class="optiontitle">Assistance Animal</div>
                 <div class="optiondetails animals">
-                  <img class="animal-img" src="assets/images/icons/animal_opt_guide_dog.svg" height="100px"/>
+                  <img class="animal-img" src="assets/images/icons/animal_opt_guide_dog.svg" height="100px" />
                   <div class="optiontext">
                     <div class="optioninfo">Animal for health/disability assistance</div>
                   </div>
@@ -645,7 +685,8 @@
               </div>
               <div class="counter animal">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
@@ -653,7 +694,7 @@
               <div class="optionbox">
                 <div class="optiontitle">Pet</div>
                 <div class="optiondetails animals">
-                  <img class="animal-img" src="assets/images/icons/animal_opt_pet.svg" height="100px"/>
+                  <img class="animal-img" src="assets/images/icons/animal_opt_pet.svg" height="100px" />
                   <div class="optiontext">
                     <div class="optioninfo">Pet for companionship (not health)</div>
                   </div>
@@ -661,7 +702,8 @@
               </div>
               <div class="counter animal">
                 <button class="button-round minus-btn">−</button>
-                <input class="textfield c1-search-field counter-input" type="text" placeholder="0" style="text-align: center;"/>
+                <input class="textfield c1-search-field counter-input" type="text" placeholder="0"
+                  style="text-align: center;" />
                 <button class="button-round plus-btn">+</button>
               </div>
             </div>
@@ -743,4 +785,5 @@
     </div>
   </main>
 </body>
+
 </html>
