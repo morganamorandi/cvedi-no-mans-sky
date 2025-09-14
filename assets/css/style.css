@@ -473,7 +473,7 @@ label.labelsmall {
   #STANDBY SCREEN
 \*-----------------------------------*/
 .sb-container {
-  height: 850px;
+  height: 100vh;
   padding-inline: 12px;
   background: radial-gradient(var(--bg-petrol), var(--bg-dark-petrol));
 }
