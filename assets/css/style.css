@@ -1394,6 +1394,40 @@ label.labelsmall {
   align-items: center;
 }
 
+.popup.popup-payment {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  width: 80%;
+  height: 80%;
+  background: url('./assets/images/prompt_panel.png') no-repeat center/cover;
+  color: var(--misc-off-white);
+}
+
+.popup-payment-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: var(--fontSize-4);
+  font-weight: var(--weight-semiBold);
+  text-transform: capitalize;
+}
+
+.popup-payment-text {
+  margin-bottom: 10px;
+/*   font-size: var(--fontSize-6); */
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+.popup-exit-payment {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
 /*-----------------------------------*\
   #CHECK IN
 \*-----------------------------------*/
