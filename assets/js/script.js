@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     window.onload = function() {
-        document.getElementById('.output input').reset();
+        document.querySelector(".output input").value="";
     }
 
     // handle keystrokes
