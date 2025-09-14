@@ -481,7 +481,7 @@ label.labelsmall {
 .standby {
   display: flex;
   flex-direction: column;
-  padding-top: 200px;
+  padding-top: 18%;
   text-align: center;
   gap: 2rem;
 }
@@ -494,18 +494,14 @@ label.labelsmall {
   #LOAD/LANGUAGE SELECTION
 \*-----------------------------------*/
 
+.language-selection{
+  height: 100vh;
+}
+
 .sb-section-title {
   font-weight: var(--weight-semiBold);
   margin-left: 50px;
 }
-
-/* .system{
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  margin: 0;
-  overflow: clip;
-} */
 
 .center {
   height: 180px;
@@ -633,66 +629,6 @@ label.labelsmall {
   }
 }
 
-/* @property --angle {
-  syntax: '<angle>';
-  inherits: true;
-  initial-value: 0deg;
-}
-
-@property --z {
-  syntax: '<integer>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@keyframes revolve {
-  from {
-    --angle: 0deg;
-    --z: -1;
-  }
-  to {
-    --angle: 360deg;
-    --z: 0;
-  }
-}
-
-.center, .orbit1, .orbit2, .orbit3, .orbit4{
-  grid-area: 1 / 1;
-}
-
-.orbit1, .orbit2, .orbit3, .orbit4{
-   --x-amplitude: 150px;
-  --y-amplitude: 40px;
-  --x: calc(cos(var(--angle)) * var(--x-amplitude));
-  --y: calc(sin(var(--angle)) * var(--y-amplitude));
-  transform:
-    rotate(var(--rotation))
-    translate(var(--x), var(--y))
-    rotate(calc(var(--rotation) * -1));
-  z-index: calc(var(--z));
-  animation: revolve 8s linear infinite;
-} 
-
-.orbit1 {
-  --rotation: 0deg;
-  animation-delay: 0s;
-}
-
-.orbit2 {
-  --rotation: 60deg;
-  animation-delay: -2s;
-}
-
-.orbit3 {
-  --rotation: 120deg;
-  animation-delay: -4s;
-}
-
-.orbit4{
-  --rotation: 180deg;
-  animation-delay: -6s;
-} */
-
 .dimension {
   position: absolute;
   top: 50%;
@@ -722,13 +658,13 @@ label.labelsmall {
 .sb-prompt-2 {
   position: absolute;
   top: 50px;
-  right: 150px;
+  right: 240px;
 }
 
 .sb-prompt-3 {
   position: absolute;
-  top: 420px;
-  left: 150px;
+  top: 440px;
+  left: 210px;
 }
 
 .sb-prompt-4 {
@@ -1931,10 +1867,6 @@ th {
   background-color: var(--bg-dark-petrol);
 }
 
-.timetable-uppercase {
-  text-transform: uppercase;
-}
-
 /*-----------------------------------*\
   #MAP
 \*-----------------------------------*/
@@ -2107,6 +2039,11 @@ th {
 .news {
   padding: 15px;
   overflow: hidden;
+}
+
+.timetable-uppercase {
+  text-transform: uppercase;
+  color: var(--misc-orange);
 }
 
 .scrolling-text {
