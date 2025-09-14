@@ -775,7 +775,7 @@ label.labelsmall {
   text-transform: uppercase;
   color: var(--misc-teal);
   position: absolute;
-  top: 25px;
+  width: max-content;
   left: 50%;
   transform: translate(-50%, -50%);
 }
