@@ -1532,17 +1532,12 @@ label.labelsmall {
   font-size: var(--fontSize-5);
   font-weight: var(--weight-bold);
   margin-left: 3%;
+  /* margin-top: 3%; */
 }
 
-@media screen and (max-height: 730px) {
+@media (min-width: 768px) {
   .ticket-title {
-    margin-top: 3%;
-  }
-}
-
-@media screen and (min-height: 800px) {
-  .ticket-title {
-    margin-top: 10%;
+    margin-top: 7%;
   }
 }
 
