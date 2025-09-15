@@ -26,38 +26,37 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <script src="assets/js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.js" 
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const printButton = document.querySelector(".button-beveled.print");
-    const popup = document.getElementById("print-popup");
-    const overlay = document.getElementById("overlay");
-    const closeBtn = document.querySelector(".popup-close");
-    const exitBtn = document.querySelector(".popup-exit");
+    document.addEventListener("DOMContentLoaded", () => {
+      const printButton = document.querySelector(".button-beveled.print");
+      const popup = document.getElementById("print-popup");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.querySelector(".popup-close");
+      const exitBtn = document.querySelector(".popup-exit");
 
-    printButton.addEventListener("click", () => {
-      popup.classList.add("active");
-      overlay.classList.add("active");
+      printButton.addEventListener("click", () => {
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      exitBtn.addEventListener("click", () => {
+        window.location.href = "index.html#sb";
+      });
+
     });
-
-    closeBtn.addEventListener("click", () => {
-      popup.classList.remove("active");
-      overlay.classList.remove("active");
-    });
-
-    exitBtn.addEventListener("click", () => {
-      window.location.href = "index.html#sb";
-    });
-
-  });
-</script>
+  </script>
 
 </head>
 
-<body>  
+<body>
   <nav class="navbar">
     <div class="nav-toggle-btn">
       <img src="./assets/images/icons/sidebar_toggle.svg" alt="nav toggle" width="60">
@@ -113,68 +112,68 @@
         <h2>Add Your Ticket Number</h2>
         <div class="keyboard-page">
           <div class="output">
-          <input type="text" name="output" id="output" placeholder="Ticket Code">
-          <div class="button-beveled">add</div>
-        </div>
-      
-        <div class="virtual-keyboard">
-          <div class="row">
-            <input type="button" value="1">
-            <input type="button" value="2">
-            <input type="button" value="3">
-            <input type="button" value="4">
-            <input type="button" value="5">
-            <input type="button" value="6">
-            <input type="button" value="7">
-            <input type="button" value="8">
-            <input type="button" value="9">
-            <input type="button" value="0">
+            <input type="text" name="output" id="output" placeholder="Ticket Code">
+            <div class="button-beveled">add</div>
           </div>
-          <div class="row">
-            <input type="button" value="q">
-            <input type="button" value="w">
-            <input type="button" value="e">
-            <input type="button" value="r">
-            <input type="button" value="t">
-            <input type="button" value="y">
-            <input type="button" value="u">
-            <input type="button" value="i">
-            <input type="button" value="o">
-            <input type="button" value="p">
+
+          <div class="virtual-keyboard">
+            <div class="row">
+              <input type="button" value="1">
+              <input type="button" value="2">
+              <input type="button" value="3">
+              <input type="button" value="4">
+              <input type="button" value="5">
+              <input type="button" value="6">
+              <input type="button" value="7">
+              <input type="button" value="8">
+              <input type="button" value="9">
+              <input type="button" value="0">
+            </div>
+            <div class="row">
+              <input type="button" value="q">
+              <input type="button" value="w">
+              <input type="button" value="e">
+              <input type="button" value="r">
+              <input type="button" value="t">
+              <input type="button" value="y">
+              <input type="button" value="u">
+              <input type="button" value="i">
+              <input type="button" value="o">
+              <input type="button" value="p">
+            </div>
+            <div class="row">
+              <input type="button" value="a">
+              <input type="button" value="s">
+              <input type="button" value="d">
+              <input type="button" value="f">
+              <input type="button" value="g">
+              <input type="button" value="h">
+              <input type="button" value="j">
+              <input type="button" value="k">
+              <input type="button" value="l">
+              <input type="button" value="-">
+            </div>
+            <div class="row">
+              <input type="button" value="z">
+              <input type="button" value="x">
+              <input type="button" value="c">
+              <input type="button" value="v">
+              <input type="button" value="b">
+              <input type="button" value="n">
+              <input type="button" value="m">
+              <input type="button" value=",">
+              <input type="button" value=".">
+              <input type="button" value="?">
+
+            </div>
+            <div class="row">
+              <input type="button" value="shift" class="shift">
+              <input type="button" value=" ">
+              <input type="button" value=" " class="spacebar">
+              <input type="button" value=" ">
+              <input type="button" value="delete" class="delete">
+            </div>
           </div>
-          <div class="row">
-            <input type="button" value="a">
-            <input type="button" value="s">
-            <input type="button" value="d">
-            <input type="button" value="f">
-            <input type="button" value="g">
-            <input type="button" value="h">
-            <input type="button" value="j">
-            <input type="button" value="k">
-            <input type="button" value="l">
-            <input type="button" value="-">
-          </div>
-          <div class="row">
-            <input type="button" value="z">
-            <input type="button" value="x">
-            <input type="button" value="c">
-            <input type="button" value="v">
-            <input type="button" value="b">
-            <input type="button" value="n">
-            <input type="button" value="m">
-            <input type="button" value=",">
-            <input type="button" value=".">
-            <input type="button" value="?">
-            
-          </div>
-          <div class="row">
-            <input type="button" value="shift" class="shift">
-            <input type="button" value=" ">
-            <input type="button" value=" " class="spacebar">
-            <input type="button" value=" ">
-            <input type="button" value="delete" class="delete">
-          </div>
-        </div>
         </div>
       </section>
       <section class="main-section active" id="checkin2">
@@ -218,10 +217,11 @@
                 <p><span class="label">Depart:</span> <br> <span class="teal">13:00</span></p>
               </div>
             </div>
+            <div class="barcode-number">
+              <p class="teal">9788817103046</p>
+            </div>
           </div>
-          <div class="barcode-number">
-            <p class="teal">9788817103046</p>
-          </div>
+
         </div>
         <div class="button-ticket">
           <button class="button-beveled print">Print</button>
@@ -230,9 +230,9 @@
         <div id="overlay" class="overlay"></div>
 
         <div id="print-popup" class="popup">
-            <button class="popup-close">&times;</button>
-            <p>Your ticket is being printed<br> Wait for a few seconds</p>
-            <button class="button-beveled popup-exit">Exit</button>
+          <button class="popup-close">&times;</button>
+          <p>Your ticket is being printed<br> Wait for a few seconds</p>
+          <button class="button-beveled popup-exit">Exit</button>
         </div>
       </section>
     </div>
