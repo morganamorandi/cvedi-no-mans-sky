@@ -769,7 +769,7 @@ label.labelsmall {
 }
 
 .d-button-text {
-  font-family: var(--fontFamily-chakra);
+  font-family: var(--fontFamily-orbitron);
   font-weight: var(--weight-semiBold);
   font-size: var(--fontSize-7);
   text-transform: uppercase;
@@ -848,6 +848,7 @@ label.labelsmall {
   opacity: 0;
   overflow: hidden;
 }
+
 
 /*-----------------------------------*\
   #MAIN
