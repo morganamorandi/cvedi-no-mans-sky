@@ -1449,7 +1449,7 @@ label.labelsmall {
 
 .virtual-keyboard {
   position: absolute;
-  top: 15%;
+  top: 30%;
 }
 
 .virtual-keyboard .row {
@@ -1490,6 +1490,7 @@ label.labelsmall {
   gap: 50px;
   padding: 40px;
   margin-left: 167px;
+  margin-top: 4%;
 }
 
 .output input {
@@ -1515,7 +1516,7 @@ label.labelsmall {
   text-align: center;
 }
 
-#checkin2 {
+#checkin2.active {
   display: flex;
   flex-direction: column;
 }
