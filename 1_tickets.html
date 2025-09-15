@@ -8,7 +8,7 @@
 
 
   <title>No Man's Sky - Multiverse Crossroads Interactive Totem</title>
-  
+
   <link rel="icon" type="image/x-icon" href="./assets/images/logoNexus2x.png">
 
   <!--
@@ -26,6 +26,25 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <script src="assets/js/script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const paymentButton = document.querySelector(".button-beveled.confirm-payment");
+      const popup = document.getElementById("payment-popup");
+      const overlay = document.getElementById("overlay");
+      const exitPaymentBtn = document.querySelector(".popup-exit-payment");
+
+      paymentButton.addEventListener("click", () => {
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      exitPaymentBtn.addEventListener("click", () => {
+        window.location.href = "2_checkin.html#checkin2";
+      });
+
+    });
+  </script>
 
 </head>
 
@@ -344,7 +363,8 @@
                 </div>
                 <div class="c1-passenger-item">
                   <label for="last-name1">Last Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name1" placeholder="Last Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name1"
+                    placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -358,7 +378,8 @@
                 </div>
                 <div class="c1-passenger-item">
                   <label for="last-name2">Last Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name2" placeholder="Last Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name2"
+                    placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -372,7 +393,8 @@
                 </div>
                 <div class="c1-passenger-item">
                   <label for="last-name3">Last Name</label>
-                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name3" placeholder="Last Name">
+                  <input class="textfield c1-passenger-field" autocomplete="off" type="text" id="last-name3"
+                    placeholder="Last Name">
                 </div>
               </div>
             </div>
@@ -431,7 +453,8 @@
               <div class="optionbox">
                 <div class="optiontitle">Personal item</div>
                 <div class="optiondetails luggage">
-                  <img src="assets/images/icons/luggage_opt_personalitem.svg" alt="luggage option - personal item" height="100">
+                  <img src="assets/images/icons/luggage_opt_personalitem.svg" alt="luggage option - personal item"
+                    height="100">
                   <div class="optiontext">
                     <div class="optionsize">40x20x25</div>
                     <div class="optioninfo">Must fit under seat in front of you</div>
@@ -467,7 +490,8 @@
               <div class="optionbox">
                 <div class="optiontitle">Checked Luggage</div>
                 <div class="optiondetails luggage">
-                  <img src="assets/images/icons/luggage_opt_checkedin.svg" alt="luggage option - checked-in" width="100">
+                  <img src="assets/images/icons/luggage_opt_checkedin.svg" alt="luggage option - checked-in"
+                    width="100">
                   <div class="optiontext">
                     <div class="optionsize">80x120x120</div>
                     <div class="optioninfo">Must be checked in. Max weight 10 qM<sub>☉</sub></div>
@@ -676,7 +700,8 @@
               <div class="optionbox">
                 <div class="optiontitle">Assistance Animal</div>
                 <div class="optiondetails animals">
-                  <img class="animal-img" src="assets/images/icons/animal_opt_guide_dog.svg" alt="guide animal" height="100">
+                  <img class="animal-img" src="assets/images/icons/animal_opt_guide_dog.svg" alt="guide animal"
+                    height="100">
                   <div class="optiontext">
                     <div class="optioninfo">Animal for health/disability assistance</div>
                   </div>
@@ -761,17 +786,17 @@
               <div class="c1-payment-fields">
                 <div class="c1-payment-item">
                   <label for="first-name4">First Name</label>
-                  <input class="textfield c1-payment-field" type="text" id="first-name4" placeholder="First Name"/>
+                  <input class="textfield c1-payment-field" type="text" id="first-name4" placeholder="First Name" />
                 </div>
                 <div class="c1-payment-item">
                   <label for="last-name4">Last Name</label>
-                  <input class="textfield c1-payment-field" type="text" id="last-name4" placeholder="Last Name"/>
+                  <input class="textfield c1-payment-field" type="text" id="last-name4" placeholder="Last Name" />
                 </div>
               </div>
               <div class="c1-payment-fields">
                 <div class="c1-payment-item">
                   <label for="address">Address</label>
-                  <input class="textfield c1-payment-field" type="text" id="address" placeholder="Address"/>
+                  <input class="textfield c1-payment-field" type="text" id="address" placeholder="Address" />
                 </div>
                 <div class="c1-payment-item short">
                   <label for="dropdown">Dimension</label>
@@ -802,50 +827,42 @@
                     <input class="radio-option payment" type="radio" id="paymentopt1" name="ridetype">
                     <label class="label" for="paymentopt1">Credit Card</label>
                   </div>
-                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_card.svg" alt="Credit Card" height="28">
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_card.svg" alt="Credit Card"
+                    height="28">
                 </div>
                 <div class="radio payment-option">
                   <div class="payment-option-radio">
                     <input class="radio-option payment" type="radio" id="paymentopt2" name="ridetype" checked>
                     <label class="label" for="paymentopt2">Chronocurrency</label>
                   </div>
-                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_chronocurrency.svg" alt="Chronocurrency" height="36">
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_chronocurrency.svg"
+                    alt="Chronocurrency" height="36">
                 </div>
                 <div class="radio payment-option">
                   <div class="payment-option-radio">
                     <input class="radio-option payment" type="radio" id="paymentopt3" name="ridetype" checked>
                     <label class="label" for="paymentopt3">LapYap</label>
                   </div>
-                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_lapyap.svg" alt="LapYap" height="36">
+                  <img class="payment-option-icon" src="assets/images/icons/payment_opt_lapyap.svg" alt="LapYap"
+                    height="36">
                 </div>
               </div>
             </div>
           </div>
         </div>
         <footer class="footer-gradient taller">
-          <button class="button-beveled footer-button">Confirm and pay</button>
+          <button class="button-beveled confirm-payment footer-button">Confirm and pay</button>
         </footer>
-      </section>
-      <!--endregion-->
 
+        <div id="overlay" class="overlay"></div>
 
-      <!--region CONFIRMATION SECTION-->
-      <section class="main-section c1-pg-8">
-        <div class="c1-confirmation">
-          <div class="title-header">
-            <h2>Ticket purchase successful!</h2>
-          </div>
-          <div class="order-details">
-            Thank you for choosing NMC.<br>We hope you have a pleasant traveling experience with us.
-            <br>
-            <h4>You can view your ticket in the Check-in section.</h4>
-          </div>
+        <div id="payment-popup" class="popup popup-payment">
+            <h3 class="popup-payment-title">Ticket purchase successful!</h3>
+            <p class="popup-payment-text">Thank you for choosing NMC.<br>We hope you have a pleasant traveling experience with us.</p>
+          <button class="button-beveled popup-exit-payment">See my ticket</button>
         </div>
-        <footer class="footer-gradient"></footer>
       </section>
       <!--endregion-->
-
-
     </div>
   </main>
 </body>
