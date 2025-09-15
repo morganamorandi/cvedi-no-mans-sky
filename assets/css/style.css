@@ -1535,12 +1535,6 @@ label.labelsmall {
   /* margin-top: 3%; */
 }
 
-@media (min-width: 768px) {
-  .ticket-title {
-    margin-top: 7%;
-  }
-} */
-
 .ticket-left,
 .ticket-right {
   position: absolute;
@@ -2180,5 +2174,18 @@ th {
   to {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
+  }
+}
+
+
+@media (min-width: 600px) {
+  .ticket-title {
+    margin-top: 3%;
+  }
+}
+
+@media (min-width: 768px) {
+  .ticket-title {
+    margin-top: 7%;
   }
 }
