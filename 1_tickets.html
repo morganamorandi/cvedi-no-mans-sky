@@ -27,36 +27,6 @@
 
   <script src="assets/js/script.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const paymentButton = document.querySelector(".button-beveled.confirm-payment");
-      const popup = document.getElementById("payment-popup");
-      const overlay = document.getElementById("overlay");
-      const exitPaymentBtn = document.querySelector(".popup-exit-payment");
-
-      paymentButton.addEventListener("click", () => {
-        popup.classList.add("active");
-        overlay.classList.add("active");
-      });
-
-      exitPaymentBtn.addEventListener("click", () => {
-        window.location.href = "2_checkin.html#checkin2";
-      });
-
-      const ridesBtns = document.querySelectorAll(".button-square");
-
-      ridesBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".main-section").forEach(s =>
-            s.classList.remove("active")
-          );
-          document.getElementById("rides").classList.add("active");
-        })
-      })
-
-    });
-  </script>
-
 </head>
 
 <body>

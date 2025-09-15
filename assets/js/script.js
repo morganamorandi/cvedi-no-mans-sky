@@ -10,7 +10,6 @@ toggleSidebar.onclick = function() {
 
 
 // Funzione elemento date
-
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('date-buttons-container');
     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -180,6 +179,36 @@ if (document.readyState === 'loading') {
     initCounters();
 }
 
+//--------- rides page change ---------------
+
+document.addEventListener("DOMContentLoaded", () => {
+      const paymentButton = document.querySelector(".button-beveled.confirm-payment");
+      const popup = document.getElementById("payment-popup");
+      const overlay = document.getElementById("overlay");
+      const exitPaymentBtn = document.querySelector(".popup-exit-payment");
+
+      paymentButton.addEventListener("click", () => {
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      exitPaymentBtn.addEventListener("click", () => {
+        window.location.href = "2_checkin.html#checkin2";
+      });
+
+      const ridesBtns = document.querySelectorAll(".button-square");
+
+      ridesBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".main-section").forEach(s =>
+            s.classList.remove("active")
+          );
+          document.getElementById("rides").classList.add("active");
+        })
+      })
+
+    });
+
 
 // ------KEYBOARD-------
 
@@ -255,13 +284,13 @@ document.addEventListener('DOMContentLoaded', function() {
     _keystroke("upper"); // init keystrokes
 });
 
-
+//------- checkin page change ---------
 document.addEventListener('DOMContentLoaded', function() {
 
     const printButton = document.querySelector(".button-beveled.print");
     const popup = document.getElementById("print-popup");
     const overlay = document.getElementById("overlay");
-    // const exitBtn = document.querySelector(".popup-exit");
+    const exitBtn = document.querySelector(".popup-exit");
 
   function showSection(id) {
       document.querySelectorAll('.main-section').forEach(sec => {
@@ -271,17 +300,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.querySelector('#addTicket').addEventListener('click', () => showSection('#checkin2'));
-    document.querySelector('.popup-exit').addEventListener('click', () => showSection('#checkin'));
-
 
       printButton.addEventListener("click", () => {
         popup.classList.add("active");
         overlay.classList.add("active");
       });
 
-    //   exitBtn.addEventListener("click", () => {
-    //     window.location.href = "2_checkin.html#checkin";
-    //   });
+      if (exitBtn) {
+        exitBtn.addEventListener("click", () => {
+        document.querySelectorAll(".main-section").forEach(s => 
+            s.classList.remove("active")
+        );
+        document.getElementById("checkin").classList.add("active");
+
+        popup.classList.remove("active");
+        overlay.classList.remove("active");
+        });
+      }
 });
 
 
