@@ -29,6 +29,39 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const printButton = document.querySelector(".button-beveled.print");
+      const popup = document.getElementById("print-popup");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.querySelector(".popup-close");
+      const exitBtn = document.querySelector(".popup-exit");
+
+      printButton.addEventListener("click", () => {
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      exitBtn.addEventListener("click", () => {
+        window.location.href = "index.html#sb";
+      });
+
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.location.hash === "#checkin2") {
+        document.querySelectorAll(".main-section").forEach(s => s.classList.remove("active"));
+        document.getElementById("checkin2").classList.add("active");
+      }
+    });
+
+  </script>
+
 </head>
 
 <body>
@@ -151,7 +184,6 @@
           </div>
         </div>
       </section>
-      
       <section class="main-section" id="checkin2">
         <h2>Ticket</h2>
         <div class="ticket-box">
