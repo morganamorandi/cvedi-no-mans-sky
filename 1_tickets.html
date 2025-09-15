@@ -43,6 +43,17 @@
         window.location.href = "2_checkin.html#checkin2";
       });
 
+      const ridesBtn = document.querySelector(".button-square");
+
+      if (ridesBtn) {
+        ridesBtn.addEventListener("click", () => {
+          document.querySelectorAll(".main-section").forEach(s =>
+            s.classList.remove("active")
+          );
+          document.getElementById("rides").classList.add("active");
+        });
+      }
+
     });
   </script>
 
@@ -158,7 +169,7 @@
 
 
       <!--region RIDES SECTION-->
-      <section class="main-section c1-pg-2">
+      <section class="main-section c1-pg-2" id="rides">
         <div class="c1-results">
           <div class="title-header">
             <h2>Search Results</h2>
@@ -321,7 +332,7 @@
                   <div class="ridetitle">TBC — NBB</div>
                   <div class="ridetext">21 nov 18:44</div>
                 </div>
-                <div class="button-square"></div>
+                <button class="button-square"></button>
               </div>
               <div class="progress-tracker">
                 <div class="step1">
@@ -417,7 +428,7 @@
                   <div class="ridetitle">TBC — NBB</div>
                   <div class="ridetext">21 nov 18:44</div>
                 </div>
-                <div class="button-square"></div>
+                <button class="button-square"></button>
               </div>
               <div class="progress-tracker">
                 <div class="step1">
@@ -525,7 +536,7 @@
                   <div class="ridetitle">TBC — NBB</div>
                   <div class="ridetext">21 nov 18:44</div>
                 </div>
-                <div class="button-square"></div>
+                <button class="button-square"></button>
               </div>
               <div class="progress-tracker">
                 <div class="step1">
@@ -664,7 +675,7 @@
                   <div class="ridetitle">TBC — NBB</div>
                   <div class="ridetext">21 nov 18:44</div>
                 </div>
-                <div class="button-square"></div>
+                <button class="button-square"></button>
               </div>
               <div class="progress-tracker">
                 <div class="step1">
@@ -750,7 +761,7 @@
                   <div class="ridetitle">TBC — NBB</div>
                   <div class="ridetext">21 nov 18:44</div>
                 </div>
-                <div class="button-square"></div>
+                <button class="button-square"></button>
               </div>
               <div class="progress-tracker">
                 <div class="step1">
@@ -858,8 +869,9 @@
         <div id="overlay" class="overlay"></div>
 
         <div id="payment-popup" class="popup popup-payment">
-            <h3 class="popup-payment-title">Ticket purchase successful!</h3>
-            <p class="popup-payment-text">Thank you for choosing NMC.<br>We hope you have a pleasant traveling experience with us.</p>
+          <h3 class="popup-payment-title">Ticket purchase successful!</h3>
+          <p class="popup-payment-text">Thank you for choosing NMC.<br>We hope you have a pleasant traveling experience
+            with us.</p>
           <button class="button-beveled popup-exit-payment">See my ticket</button>
         </div>
       </section>
