@@ -1,7 +1,7 @@
 //navbar
 document.addEventListener('DOMContentLoaded', function() {
     const toggleSidebar = document.querySelector('.nav-toggle-btn');
-const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar');
 
 toggleSidebar.onclick = function() {
     navbar.classList.toggle('active');
@@ -187,11 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var $keyboardWrapper = $('.virtual-keyboard'),
     $key = $keyboardWrapper.find("input"),
     $key_delete = $('.delete'),
-    $key_shift = $('.shift'),
+    // $key_shift = $('.shift'),
     $outputField = $('.output input'),
     $currentValue = $outputField.val(),
     actionKeys = $(".delete,.shift")
-    activeShiftClass = "shift-activated";
+    // activeShiftClass = "shift-activated";
 
     
     window.onload = function() {
@@ -205,12 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // check for shift key for upper
-        if($key_shift.hasClass(activeShiftClass)){
-        keyCase = 'upper';
-        $key_shift.removeClass(activeShiftClass);
-        }else{
-        keyCase = 'lower';
-        }
+        // if($key_shift.hasClass(activeShiftClass)){
+        // keyCase = 'upper';
+        // $key_shift.removeClass(activeShiftClass);
+        // }else{
+        // keyCase = 'lower';
+        // }
         
         // handle case
         if(keyCase == 'upper'){
@@ -237,10 +237,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // shift
-    $key_shift.on('click',function(e){
-    e.preventDefault();
-    $(this).toggleClass(activeShiftClass);
-    });
+    // $key_shift.on('click',function(e){
+    // e.preventDefault();
+    // $(this).toggleClass(activeShiftClass);
+    // });
 
     // grab current value of typed text
     function getCurrentVal(){
@@ -252,5 +252,175 @@ document.addEventListener('DOMContentLoaded', function() {
     $outputField.focus();
     }
 
-    _keystroke("lower"); // init keystrokes
+    _keystroke("upper"); // init keystrokes
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const printButton = document.querySelector(".button-beveled.print");
+    const popup = document.getElementById("print-popup");
+    const overlay = document.getElementById("overlay");
+    // const exitBtn = document.querySelector(".popup-exit");
+
+  function showSection(id) {
+      document.querySelectorAll('.main-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.querySelector('#addTicket').addEventListener('click', () => showSection('#checkin2'));
+    document.querySelector('.popup-exit').addEventListener('click', () => showSection('#checkin'));
+
+
+      printButton.addEventListener("click", () => {
+        popup.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+    //   exitBtn.addEventListener("click", () => {
+    //     window.location.href = "2_checkin.html#checkin";
+    //   });
+});
+
+
+//---------- FAQS------------
+document.addEventListener('DOMContentLoaded', function(){
+    var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            //this.classList.toggle("active-accordion");
+            var panel = this.nextElementSibling;
+            // Chiudi tutti gli altri
+            for (let j = 0; j < acc.length; j++) {
+            if (acc[j] !== this) {
+                acc[j].classList.remove("active-accordion");
+                const otherPanel = acc[j].nextElementSibling;
+                if (otherPanel && otherPanel.style.maxHeight) {
+                otherPanel.style.maxHeight = null;
+                }
+            }
+            }
+
+            // Toggle dell'accordion cliccato
+            this.classList.toggle("active-accordion");
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+        }
+
+        function showSection(id) {
+        document.querySelectorAll('.main-section').forEach(sec => {
+            sec.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+        }
+
+        document.querySelector('.services').addEventListener('click', () => showSection('faqs'));
+        document.querySelector('.faqs2').addEventListener('click', () => showSection('faqs2'));
+        document.querySelectorAll('.active-assistance button').forEach(btn => {
+        btn.addEventListener('click', () => showSection('faqs3'));
+        });
+    });
+
+
+
+    //--------- TEXT SCRAMBLE ------------------
+    document.addEventListener('DOMContentLoaded', function(){
+        var Messenger = function(el){
+        'use strict';
+        var m = this;
+        
+        m.init = function(){
+            m.codeletters = "&#*+%?£@abcFAB$";
+            m.message = 0;
+            m.current_length = 0;
+            m.fadeBuffer = false;
+            m.messages = [
+            'Welcome to Nexus Multiversal Crossroads',
+            ];
+            
+            setTimeout(m.animateIn, 100);
+        };
+        
+        m.generateRandomString = function(length){
+            var random_text = '';
+            while(random_text.length < length){
+            random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+            } 
+            
+            return random_text;
+        };
+        
+        m.animateIn = function(){
+            if(m.current_length < m.messages[m.message].length){
+            m.current_length = m.current_length + 2;
+            if(m.current_length > m.messages[m.message].length) {
+                m.current_length = m.messages[m.message].length;
+            }
+            
+            var message = m.generateRandomString(m.current_length);
+            $(el).html(message);
+            
+            setTimeout(m.animateIn, 20);
+            } else { 
+            setTimeout(m.animateFadeBuffer, 20);
+            }
+        };
+        
+        m.animateFadeBuffer = function(){
+            if(m.fadeBuffer === false){
+            m.fadeBuffer = [];
+            for(var i = 0; i < m.messages[m.message].length; i++){
+                m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+            }
+            }
+            
+            var do_cycles = false;
+            var message = ''; 
+            
+            for(var i = 0; i < m.fadeBuffer.length; i++){
+            var fader = m.fadeBuffer[i];
+            if(fader.c > 0){
+                do_cycles = true;
+                fader.c--;
+                message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+            } else {
+                message += fader.l;
+            }
+            }
+            
+            $(el).html(message);
+            
+            if(do_cycles === true){
+            setTimeout(m.animateFadeBuffer, 50);
+            } else {
+            setTimeout(m.cycleText, 2000);
+            }
+        };
+        
+        m.cycleText = function(){
+            m.message = m.message + 1;
+            if(m.message >= m.messages.length){
+            m.message = 0;
+            }
+            
+            m.current_length = 0;
+            m.fadeBuffer = false;
+            $(el).html('');
+            
+            setTimeout(m.animateIn, 200);
+        };
+        
+        m.init();
+        }
+
+        console.clear();
+        var messenger = new Messenger($('#messenger'));
+    })

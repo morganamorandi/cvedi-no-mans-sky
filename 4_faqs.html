@@ -249,49 +249,6 @@
       </section>
     </div>
   </main>
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        //this.classList.toggle("active-accordion");
-        var panel = this.nextElementSibling;
-        // Chiudi tutti gli altri
-        for (let j = 0; j < acc.length; j++) {
-          if (acc[j] !== this) {
-            acc[j].classList.remove("active-accordion");
-            const otherPanel = acc[j].nextElementSibling;
-            if (otherPanel && otherPanel.style.maxHeight) {
-              otherPanel.style.maxHeight = null;
-            }
-          }
-        }
-
-        // Toggle dell'accordion cliccato
-        this.classList.toggle("active-accordion");
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-
-    function showSection(id) {
-      document.querySelectorAll('.main-section').forEach(sec => {
-        sec.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-
-    document.querySelector('.services').addEventListener('click', () => showSection('faqs'));
-    document.querySelector('.faqs2').addEventListener('click', () => showSection('faqs2'));
-    document.querySelectorAll('.active-assistance button').forEach(btn => {
-      btn.addEventListener('click', () => showSection('faqs3'));
-    });
-
-  </script>
 </body>
 
 </html>
